@@ -1,0 +1,322 @@
+stdint.hFile: /usr/include/stdint.h
+1     /* Copyright (C) 1997, 1998, 1999, 2000, 2001 Free Software Foundation, Inc.
+2        This file is part of the GNU C Library.
+3     
+4        The GNU C Library is free software; you can redistribute it and/or
+5        modify it under the terms of the GNU Lesser General Public
+6        License as published by the Free Software Foundation; either
+7        version 2.1 of the License, or (at your option) any later version.
+8     
+9        The GNU C Library is distributed in the hope that it will be useful,
+10        but WITHOUT ANY WARRANTY; without even the implied warranty of
+11        MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+12        Lesser General Public License for more details.
+13     
+14        You should have received a copy of the GNU Lesser General Public
+15        License along with the GNU C Library; if not, write to the Free
+16        Software Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA
+17        02111-1307 USA.  */
+18     
+19     /*
+20      *	ISO C99: 7.18 Integer types <stdint.h>
+21      */
+22     
+23     #ifndef _STDINT_H
+24     #define _STDINT_H	1
+25     
+26     #include <features.h>
+27     #include <bits/wchar.h>
+28     #include <bits/wordsize.h>
+29     
+30     /* Exact integral types.  */
+31     
+32     /* Signed.  */
+33     
+34     /* There is some amount of overlap with <sys/types.h> as known by inet code */
+35     #ifndef __int8_t_defined
+36     # define __int8_t_defined
+37     typedef signed char		int8_t;
+38     typedef short int		int16_t;
+39     typedef int			int32_t;
+40     # if __WORDSIZE == 64
+41     typedef long int		int64_t;
+42     # else
+43     __extension__
+44     typedef long long int		int64_t;
+45     # endif
+46     #endif
+47     
+48     /* Unsigned.  */
+49     typedef unsigned char		uint8_t;
+50     typedef unsigned short int	uint16_t;
+51     #ifndef __uint32_t_defined
+52     typedef unsigned int		uint32_t;
+53     # define __uint32_t_defined
+54     #endif
+55     #if __WORDSIZE == 64
+56     typedef unsigned long int	uint64_t;
+57     #else
+58     __extension__
+59     typedef unsigned long long int	uint64_t;
+60     #endif
+61     
+62     
+63     /* Small types.  */
+64     
+65     /* Signed.  */
+66     typedef signed char		int_least8_t;
+67     typedef short int		int_least16_t;
+68     typedef int			int_least32_t;
+69     #if __WORDSIZE == 64
+70     typedef long int		int_least64_t;
+71     #else
+72     __extension__
+73     typedef long long int		int_least64_t;
+74     #endif
+75     
+76     /* Unsigned.  */
+77     typedef unsigned char		uint_least8_t;
+78     typedef unsigned short int	uint_least16_t;
+79     typedef unsigned int		uint_least32_t;
+80     #if __WORDSIZE == 64
+81     typedef unsigned long int	uint_least64_t;
+82     #else
+83     __extension__
+84     typedef unsigned long long int	uint_least64_t;
+85     #endif
+86     
+87     
+88     /* Fast types.  */
+89     
+90     /* Signed.  */
+91     typedef signed char		int_fast8_t;
+92     #if __WORDSIZE == 64
+93     typedef long int		int_fast16_t;
+94     typedef long int		int_fast32_t;
+95     typedef long int		int_fast64_t;
+96     #else
+97     typedef int			int_fast16_t;
+98     typedef int			int_fast32_t;
+99     __extension__
+100     typedef long long int		int_fast64_t;
+101     #endif
+102     
+103     /* Unsigned.  */
+104     typedef unsigned char		uint_fast8_t;
+105     #if __WORDSIZE == 64
+106     typedef unsigned long int	uint_fast16_t;
+107     typedef unsigned long int	uint_fast32_t;
+108     typedef unsigned long int	uint_fast64_t;
+109     #else
+110     typedef unsigned int		uint_fast16_t;
+111     typedef unsigned int		uint_fast32_t;
+112     __extension__
+113     typedef unsigned long long int	uint_fast64_t;
+114     #endif
+115     
+116     
+117     /* Types for `void *' pointers.  */
+118     #if __WORDSIZE == 64
+119     # ifndef __intptr_t_defined
+120     typedef long int		intptr_t;
+121     #  define __intptr_t_defined
+122     # endif
+123     typedef unsigned long int	uintptr_t;
+124     #else
+125     # ifndef __intptr_t_defined
+126     typedef int			intptr_t;
+127     #  define __intptr_t_defined
+128     # endif
+129     typedef unsigned int		uintptr_t;
+130     #endif
+131     
+132     
+133     /* Largest integral types.  */
+134     #if __WORDSIZE == 64
+135     typedef long int		intmax_t;
+136     typedef unsigned long int	uintmax_t;
+137     #else
+138     __extension__
+139     typedef long long int		intmax_t;
+140     __extension__
+141     typedef unsigned long long int	uintmax_t;
+142     #endif
+143     
+144     
+145     /* The ISO C99 standard specifies that in C++ implementations these
+146        macros should only be defined if explicitly requested.  */
+147     #if !defined __cplusplus || defined __STDC_LIMIT_MACROS
+148     
+149     # if __WORDSIZE == 64
+150     #  define __INT64_C(c)	c ## L
+151     #  define __UINT64_C(c)	c ## UL
+152     # else
+153     #  define __INT64_C(c)	c ## LL
+154     #  define __UINT64_C(c)	c ## ULL
+155     # endif
+156     
+157     /* Limits of integral types.  */
+158     
+159     /* Minimum of signed integral types.  */
+160     # define INT8_MIN		(-128)
+161     # define INT16_MIN		(-32767-1)
+162     # define INT32_MIN		(-2147483647-1)
+163     # define INT64_MIN		(-__INT64_C(9223372036854775807)-1)
+164     /* Maximum of signed integral types.  */
+165     # define INT8_MAX		(127)
+166     # define INT16_MAX		(32767)
+167     # define INT32_MAX		(2147483647)
+168     # define INT64_MAX		(__INT64_C(9223372036854775807))
+169     
+170     /* Maximum of unsigned integral types.  */
+171     # define UINT8_MAX		(255)
+172     # define UINT16_MAX		(65535)
+173     # define UINT32_MAX		(4294967295U)
+174     # define UINT64_MAX		(__UINT64_C(18446744073709551615))
+175     
+176     
+177     /* Minimum of signed integral types having a minimum size.  */
+178     # define INT_LEAST8_MIN		(-128)
+179     # define INT_LEAST16_MIN	(-32767-1)
+180     # define INT_LEAST32_MIN	(-2147483647-1)
+181     # define INT_LEAST64_MIN	(-__INT64_C(9223372036854775807)-1)
+182     /* Maximum of signed integral types having a minimum size.  */
+183     # define INT_LEAST8_MAX		(127)
+184     # define INT_LEAST16_MAX	(32767)
+185     # define INT_LEAST32_MAX	(2147483647)
+186     # define INT_LEAST64_MAX	(__INT64_C(9223372036854775807))
+187     
+188     /* Maximum of unsigned integral types having a minimum size.  */
+189     # define UINT_LEAST8_MAX	(255)
+190     # define UINT_LEAST16_MAX	(65535)
+191     # define UINT_LEAST32_MAX	(4294967295U)
+192     # define UINT_LEAST64_MAX	(__UINT64_C(18446744073709551615))
+193     
+194     
+195     /* Minimum of fast signed integral types having a minimum size.  */
+196     # define INT_FAST8_MIN		(-128)
+197     # if __WORDSIZE == 64
+198     #  define INT_FAST16_MIN	(-9223372036854775807L-1)
+199     #  define INT_FAST32_MIN	(-9223372036854775807L-1)
+200     # else
+201     #  define INT_FAST16_MIN	(-2147483647-1)
+202     #  define INT_FAST32_MIN	(-2147483647-1)
+203     # endif
+204     # define INT_FAST64_MIN		(-__INT64_C(9223372036854775807)-1)
+205     /* Maximum of fast signed integral types having a minimum size.  */
+206     # define INT_FAST8_MAX		(127)
+207     # if __WORDSIZE == 64
+208     #  define INT_FAST16_MAX	(9223372036854775807L)
+209     #  define INT_FAST32_MAX	(9223372036854775807L)
+210     # else
+211     #  define INT_FAST16_MAX	(2147483647)
+212     #  define INT_FAST32_MAX	(2147483647)
+213     # endif
+214     # define INT_FAST64_MAX		(__INT64_C(9223372036854775807))
+215     
+216     /* Maximum of fast unsigned integral types having a minimum size.  */
+217     # define UINT_FAST8_MAX		(255)
+218     # if __WORDSIZE == 64
+219     #  define UINT_FAST16_MAX	(18446744073709551615UL)
+220     #  define UINT_FAST32_MAX	(18446744073709551615UL)
+221     # else
+222     #  define UINT_FAST16_MAX	(4294967295U)
+223     #  define UINT_FAST32_MAX	(4294967295U)
+224     # endif
+225     # define UINT_FAST64_MAX	(__UINT64_C(18446744073709551615))
+226     
+227     
+228     /* Values to test for integral types holding `void *' pointer.  */
+229     # if __WORDSIZE == 64
+230     #  define INTPTR_MIN		(-9223372036854775807L-1)
+231     #  define INTPTR_MAX		(9223372036854775807L)
+232     #  define UINTPTR_MAX		(18446744073709551615UL)
+233     # else
+234     #  define INTPTR_MIN		(-2147483647-1)
+235     #  define INTPTR_MAX		(2147483647)
+236     #  define UINTPTR_MAX		(4294967295U)
+237     # endif
+238     
+239     
+240     /* Minimum for largest signed integral type.  */
+241     # define INTMAX_MIN		(-__INT64_C(9223372036854775807)-1)
+242     /* Maximum for largest signed integral type.  */
+243     # define INTMAX_MAX		(__INT64_C(9223372036854775807))
+244     
+245     /* Maximum for largest unsigned integral type.  */
+246     # define UINTMAX_MAX		(__UINT64_C(18446744073709551615))
+247     
+248     
+249     /* Limits of other integer types.  */
+250     
+251     /* Limits of `ptrdiff_t' type.  */
+252     # if __WORDSIZE == 64
+253     #  define PTRDIFF_MIN		(-9223372036854775807L-1)
+254     #  define PTRDIFF_MAX		(9223372036854775807L)
+255     # else
+256     #  define PTRDIFF_MIN		(-2147483647-1)
+257     #  define PTRDIFF_MAX		(2147483647)
+258     # endif
+259     
+260     /* Limits of `sig_atomic_t'.  */
+261     # define SIG_ATOMIC_MIN		(-2147483647-1)
+262     # define SIG_ATOMIC_MAX		(2147483647)
+263     
+264     /* Limit of `size_t' type.  */
+265     # if __WORDSIZE == 64
+266     #  define SIZE_MAX		(18446744073709551615UL)
+267     # else
+268     #  define SIZE_MAX		(4294967295U)
+269     # endif
+270     
+271     /* Limits of `wchar_t'.  */
+272     # ifndef WCHAR_MIN
+273     /* These constants might also be defined in <wchar.h>.  */
+274     #  define WCHAR_MIN		__WCHAR_MIN
+275     #  define WCHAR_MAX		__WCHAR_MAX
+276     # endif
+277     
+278     /* Limits of `wint_t'.  */
+279     # define WINT_MIN		(0u)
+280     # define WINT_MAX		(4294967295u)
+281     
+282     #endif	/* C++ && limit macros */
+283     
+284     
+285     /* The ISO C99 standard specifies that in C++ implementations these
+286        should only be defined if explicitly requested.  */
+287     #if !defined __cplusplus || defined __STDC_CONSTANT_MACROS
+288     
+289     /* Signed.  */
+290     # define INT8_C(c)	c
+291     # define INT16_C(c)	c
+292     # define INT32_C(c)	c
+293     # if __WORDSIZE == 64
+294     #  define INT64_C(c)	c ## L
+295     # else
+296     #  define INT64_C(c)	c ## LL
+297     # endif
+298     
+299     /* Unsigned.  */
+300     # define UINT8_C(c)	c ## U
+301     # define UINT16_C(c)	c ## U
+302     # define UINT32_C(c)	c ## U
+303     # if __WORDSIZE == 64
+304     #  define UINT64_C(c)	c ## UL
+305     # else
+306     #  define UINT64_C(c)	c ## ULL
+307     # endif
+308     
+309     /* Maximal type.  */
+310     # if __WORDSIZE == 64
+311     #  define INTMAX_C(c)	c ## L
+312     #  define UINTMAX_C(c)	c ## UL
+313     # else
+314     #  define INTMAX_C(c)	c ## LL
+315     #  define UINTMAX_C(c)	c ## ULL
+316     # endif
+317     
+318     #endif	/* C++ && constant macros */
+319     
+320     #endif /* stdint.h */
+321     

@@ -1,0 +1,4510 @@
+0000               .org   $0000
+0000  08           php
+0001  C2 30        rep    #$30      ; Note: m=0, x=0
+0003  F4 00 00     pea    $0000
+0006  F4 00 00     pea    $0000
+0009  20 00 00     jsr    $0000
+000C  28           plp
+000D  60           rts
+000E  3B           tsc
+000F  38           sec
+0010  E9 06 00     sbc    #$0006    ; Note: 16-bit instruction
+0013  1B           tcs
+0014  0B           phd
+0015  5B           tcd
+0016  E2 20        sep    #$20      ; Note: m=1, x=0
+0018  A5 09        lda    $09
+001A  0A           asl    a
+001B  0A           asl    a
+001C  0A           asl    a
+001D  0A           asl    a
+001E  8D 00 00     sta    $0000
+0021  C2 20        rep    #$20      ; Note: m=0, x=1
+0023  AD 00 00     lda    $0000
+0026  29 FF 00     and    #$00FF    ; Note: 16-bit instruction
+0029  18           clc
+002A  69 80 02     adc    #$0280    ; Note: 16-bit instruction
+002D  85 05        sta    $05
+002F  E2 20        sep    #$20      ; Note: m=1, x=0
+0031  A5 0B        lda    $0B
+0033  A0 02 00     ldy    #$0002    ; Note: 16-bit instruction
+0036  91 05        sta    ($05),y
+0038  C2 20        rep    #$20      ; Note: m=0, x=1
+003A  A5 0D        lda    $0D
+003C  C8           iny
+003D  C8           iny
+003E  91 05        sta    ($05),y
+0040  A5 0F        lda    $0F
+0042  A0 08        ldy    #$08
+0044  00           brk
+0045  91 05        sta    ($05),y
+0047  0B           phd
+0048  C2 30        rep    #$30      ; Note: m=0, x=0
+004A  A9 00 00     lda    #$0000    ; Note: 16-bit instruction
+004D  5B           tcd
+004E  E2 30        sep    #$30      ; Note: m=1, x=1
+0050  AE 00 00     ldx    $0000
+0053  20 0F C0     jsr    $C00F
+0056  2B           pld
+0057  C2 30        rep    #$30      ; Note: m=0, x=0
+0059  AD 23 00     lda    $0023
+005C  29 FF 00     and    #$00FF    ; Note: 16-bit instruction
+005F  A8           tay
+0060  A5 07        lda    $07
+0062  85 0F        sta    $0F
+0064  2B           pld
+0065  3B           tsc
+0066  18           clc
+0067  69 0E 00     adc    #$000E    ; Note: 16-bit instruction
+006A  1B           tcs
+006B  98           tya
+006C  60           rts
+006D  3B           tsc
+006E  38           sec
+006F  E9 04 00     sbc    #$0004    ; Note: 16-bit instruction
+0072  1B           tcs
+0073  0B           phd
+0074  5B           tcd
+0075  F4 00 00     pea    $0000
+0078  F4 00 00     pea    $0000
+007B  F4 0C 00     pea    $000C
+007E  D4 07        pei    ($07)
+0080  20 00 00     jsr    $0000
+0083  E2 20        sep    #$20      ; Note: m=1, x=0
+0085  85 01        sta    $01
+0087  C2 20        rep    #$20      ; Note: m=0, x=1
+0089  A5 01        lda    $01
+008B  29 FF 00     and    #$00FF    ; Note: 16-bit instruction
+008E  A8           tay
+008F  A5 05        lda    $05
+0091  85 07        sta    $07
+0093  2B           pld
+0094  3B           tsc
+0095  18           clc
+0096  69 06 00     adc    #$0006    ; Note: 16-bit instruction
+0099  1B           tcs
+009A  98           tya
+009B  60           rts
+009C  3B           tsc
+009D  38           sec
+009E  E9 06 00     sbc    #$0006    ; Note: 16-bit instruction
+00A1  1B           tcs
+00A2  0B           phd
+00A3  5B           tcd
+00A4  E2 20        sep    #$20      ; Note: m=1, x=0
+00A6  A5 09        lda    $09
+00A8  0A           asl    a
+00A9  0A           asl    a
+00AA  0A           asl    a
+00AB  0A           asl    a
+00AC  8D 00 00     sta    $0000
+00AF  C2 20        rep    #$20      ; Note: m=0, x=1
+00B1  AD 00 00     lda    $0000
+00B4  29 FF 00     and    #$00FF    ; Note: 16-bit instruction
+00B7  18           clc
+00B8  69 80 02     adc    #$0280    ; Note: 16-bit instruction
+00BB  85 05        sta    $05
+00BD  D4 09        pei    ($09)
+00BF  20 00 00     jsr    $0000
+00C2  E2 20        sep    #$20      ; Note: m=1, x=0
+00C4  A5 0D        lda    $0D
+00C6  A0 0A 00     ldy    #$000A    ; Note: 16-bit instruction
+00C9  91 05        sta    ($05),y
+00CB  A5 0F        lda    $0F
+00CD  C8           iny
+00CE  91 05        sta    ($05),y
+00D0  C2 20        rep    #$20      ; Note: m=0, x=1
+00D2  F4 00 00     pea    $0000
+00D5  D4 0B        pei    ($0B)
+00D7  F4 03 00     pea    $0003
+00DA  D4 09        pei    ($09)
+00DC  20 00 00     jsr    $0000
+00DF  E2 20        sep    #$20      ; Note: m=1, x=0
+00E1  85 01        sta    $01
+00E3  C2 20        rep    #$20      ; Note: m=0, x=1
+00E5  A5 01        lda    $01
+00E7  29 FF 00     and    #$00FF    ; Note: 16-bit instruction
+00EA  A8           tay
+00EB  A5 07        lda    $07
+00ED  85 0F        sta    $0F
+00EF  2B           pld
+00F0  3B           tsc
+00F1  18           clc
+00F2  69 0E 00     adc    #$000E    ; Note: 16-bit instruction
+00F5  1B           tcs
+00F6  98           tya
+00F7  60           rts
+00F8  3B           tsc
+00F9  38           sec
+00FA  E9 04 00     sbc    #$0004    ; Note: 16-bit instruction
+00FD  1B           tcs
+00FE  0B           phd
+00FF  5B           tcd
+0100  F4 4F 00     pea    $004F
+0103  D4 09        pei    ($09)
+0105  F4 09 00     pea    $0009
+0108  D4 07        pei    ($07)
+010A  20 00 00     jsr    $0000
+010D  E2 20        sep    #$20      ; Note: m=1, x=0
+010F  85 01        sta    $01
+0111  C2 20        rep    #$20      ; Note: m=0, x=1
+0113  A5 01        lda    $01
+0115  29 FF 00     and    #$00FF    ; Note: 16-bit instruction
+0118  A8           tay
+0119  A5 05        lda    $05
+011B  85 09        sta    $09
+011D  2B           pld
+011E  3B           tsc
+011F  18           clc
+0120  69 08 00     adc    #$0008    ; Note: 16-bit instruction
+0123  1B           tcs
+0124  98           tya
+0125  60           rts
+0126  3B           tsc
+0127  38           sec
+0128  E9 04 00     sbc    #$0004    ; Note: 16-bit instruction
+012B  1B           tcs
+012C  0B           phd
+012D  5B           tcd
+012E  D4 0B        pei    ($0B)
+0130  D4 09        pei    ($09)
+0132  F4 07 00     pea    $0007
+0135  D4 07        pei    ($07)
+0137  20 00 00     jsr    $0000
+013A  E2 20        sep    #$20      ; Note: m=1, x=0
+013C  85 01        sta    $01
+013E  C2 20        rep    #$20      ; Note: m=0, x=1
+0140  A5 01        lda    $01
+0142  29 FF 00     and    #$00FF    ; Note: 16-bit instruction
+0145  A8           tay
+0146  A5 05        lda    $05
+0148  85 0B        sta    $0B
+014A  2B           pld
+014B  3B           tsc
+014C  18           clc
+014D  69 0A 00     adc    #$000A    ; Note: 16-bit instruction
+0150  1B           tcs
+0151  98           tya
+0152  60           rts
+0153  3B           tsc
+0154  38           sec
+0155  E9 02 00     sbc    #$0002    ; Note: 16-bit instruction
+0158  1B           tcs
+0159  0B           phd
+015A  5B           tcd
+015B  20 00 00     jsr    $0000
+015E  85 01        sta    $01
+0160  48           pha
+0161  D4 07        pei    ($07)
+0163  D4 05        pei    ($05)
+0165  F4 00 00     pea    $0000
+0168  F4 00 00     pea    $0000
+016B  F4 0C 00     pea    $000C
+016E  20 00 00     jsr    $0000
+0171  F4 00 00     pea    $0000
+0174  F4 00 00     pea    $0000
+0177  20 00 00     jsr    $0000
+017A  F4 01 00     pea    $0001
+017D  F4 00 00     pea    $0000
+0180  F4 00 00     pea    $0000
+0183  20 00 00     jsr    $0000
+0186  E2 20        sep    #$20      ; Note: m=1, x=0
+0188  B2 05        lda    ($05)
+018A  C9 45        cmp    #'E'
+018C  C2 20        rep    #$20      ; Note: m=0, x=1
+018E  D0 1D        bne    $01AD
+0190  F4 00 00     pea    $0000
+0193  20 00 00     jsr    $0000
+0196  F4 00 00     pea    $0000
+0199  F4 0C 00     pea    $000C
+019C  D4 05        pei    ($05)
+019E  F4 00 00     pea    $0000
+01A1  20 00 00     jsr    $0000
+01A4  E2 20        sep    #$20      ; Note: m=1, x=0
+01A6  8D 00 00     sta    $0000
+01A9  C2 20        rep    #$20      ; Note: m=0, x=1
+01AB  80 15        bra    $01C2
+01AD  F4 00 00     pea    $0000
+01B0  F4 04 00     pea    $0004
+01B3  D4 05        pei    ($05)
+01B5  F4 01 00     pea    $0001
+01B8  20 00 00     jsr    $0000
+01BB  E2 20        sep    #$20      ; Note: m=1, x=0
+01BD  8D 00 00     sta    $0000
+01C0  C2 20        rep    #$20      ; Note: m=0, x=1
+01C2  E2 20        sep    #$20      ; Note: m=1, x=0
+01C4  AD 00 00     lda    $0000
+01C7  C9 80        cmp    #$80
+01C9  C2 20        rep    #$20      ; Note: m=0, x=1
+01CB  B0 11        bcs    $01DE
+01CD  A9 00 00     lda    #$0000    ; Note: 16-bit instruction
+01D0  A8           tay
+01D1  A5 03        lda    $03
+01D3  85 07        sta    $07
+01D5  2B           pld
+01D6  3B           tsc
+01D7  18           clc
+01D8  69 06 00     adc    #$0006    ; Note: 16-bit instruction
+01DB  1B           tcs
+01DC  98           tya
+01DD  60           rts
+01DE  A9 FF FF     lda    #$FFFF    ; Note: 16-bit instruction
+01E1  80 ED        bra    $01D0
+01E3  3B           tsc
+01E4  38           sec
+01E5  E9 00 00     sbc    #$0000    ; Note: 16-bit instruction
+01E8  1B           tcs
+01E9  0B           phd
+01EA  5B           tcd
+01EB  D4 03        pei    ($03)
+01ED  F4 00 00     pea    $0000
+01F0  F4 00 00     pea    $0000
+01F3  F4 08 00     pea    $0008
+01F6  20 00 00     jsr    $0000
+01F9  F4 00 00     pea    $0000
+01FC  F4 00 00     pea    $0000
+01FF  20 00 00     jsr    $0000
+0202  A9 00 00     lda    #$0000    ; Note: 16-bit instruction
+0205  A8           tay
+0206  A5 01        lda    $01
+0208  85 03        sta    $03
+020A  2B           pld
+020B  3B           tsc
+020C  18           clc
+020D  69 02 00     adc    #$0002    ; Note: 16-bit instruction
+0210  1B           tcs
+0211  98           tya
+0212  60           rts
+0213  3B           tsc
+0214  38           sec
+0215  E9 00 00     sbc    #$0000    ; Note: 16-bit instruction
+0218  1B           tcs
+0219  0B           phd
+021A  5B           tcd
+021B  D4 03        pei    ($03)
+021D  F4 00 00     pea    $0000
+0220  F4 00 00     pea    $0000
+0223  F4 08 00     pea    $0008
+0226  20 00 00     jsr    $0000
+0229  F4 00 00     pea    $0000
+022C  F4 00 00     pea    $0000
+022F  20 00 00     jsr    $0000
+0232  A9 00 00     lda    #$0000    ; Note: 16-bit instruction
+0235  A8           tay
+0236  A5 01        lda    $01
+0238  85 03        sta    $03
+023A  2B           pld
+023B  3B           tsc
+023C  18           clc
+023D  69 02 00     adc    #$0002    ; Note: 16-bit instruction
+0240  1B           tcs
+0241  98           tya
+0242  60           rts
+0243  3B           tsc
+0244  38           sec
+0245  E9 00 00     sbc    #$0000    ; Note: 16-bit instruction
+0248  1B           tcs
+0249  0B           phd
+024A  5B           tcd
+024B  A9 00 00     lda    #$0000    ; Note: 16-bit instruction
+024E  A8           tay
+024F  A5 01        lda    $01
+0251  85 05        sta    $05
+0253  2B           pld
+0254  3B           tsc
+0255  18           clc
+0256  69 04 00     adc    #$0004    ; Note: 16-bit instruction
+0259  1B           tcs
+025A  98           tya
+025B  60           rts
+025C  3B           tsc
+025D  38           sec
+025E  E9 00 00     sbc    #$0000    ; Note: 16-bit instruction
+0261  1B           tcs
+0262  0B           phd
+0263  5B           tcd
+0264  D4 07        pei    ($07)
+0266  D4 05        pei    ($05)
+0268  D4 03        pei    ($03)
+026A  F4 00 00     pea    $0000
+026D  F4 00 00     pea    $0000
+0270  F4 0C 00     pea    $000C
+0273  20 00 00     jsr    $0000
+0276  F4 00 00     pea    $0000
+0279  F4 00 00     pea    $0000
+027C  20 00 00     jsr    $0000
+027F  A5 07        lda    $07
+0281  A8           tay
+0282  A5 01        lda    $01
+0284  85 07        sta    $07
+0286  2B           pld
+0287  3B           tsc
+0288  18           clc
+0289  69 06 00     adc    #$0006    ; Note: 16-bit instruction
+028C  1B           tcs
+028D  98           tya
+028E  60           rts
+028F  3B           tsc
+0290  38           sec
+0291  E9 00 00     sbc    #$0000    ; Note: 16-bit instruction
+0294  1B           tcs
+0295  0B           phd
+0296  5B           tcd
+0297  D4 03        pei    ($03)
+0299  F4 00 00     pea    $0000
+029C  F4 00 00     pea    $0000
+029F  F4 08 00     pea    $0008
+02A2  20 00 00     jsr    $0000
+02A5  F4 00 00     pea    $0000
+02A8  F4 00 00     pea    $0000
+02AB  20 00 00     jsr    $0000
+02AE  A9 00 00     lda    #$0000    ; Note: 16-bit instruction
+02B1  A8           tay
+02B2  A5 01        lda    $01
+02B4  85 03        sta    $03
+02B6  2B           pld
+02B7  3B           tsc
+02B8  18           clc
+02B9  69 02 00     adc    #$0002    ; Note: 16-bit instruction
+02BC  1B           tcs
+02BD  98           tya
+02BE  60           rts
+02BF  3B           tsc
+02C0  38           sec
+02C1  E9 00 00     sbc    #$0000    ; Note: 16-bit instruction
+02C4  1B           tcs
+02C5  0B           phd
+02C6  5B           tcd
+02C7  D4 07        pei    ($07)
+02C9  D4 05        pei    ($05)
+02CB  D4 03        pei    ($03)
+02CD  F4 00 00     pea    $0000
+02D0  F4 00 00     pea    $0000
+02D3  F4 0C 00     pea    $000C
+02D6  20 00 00     jsr    $0000
+02D9  F4 00 00     pea    $0000
+02DC  F4 00 00     pea    $0000
+02DF  20 00 00     jsr    $0000
+02E2  A9 01 00     lda    #$0001    ; Note: 16-bit instruction
+02E5  A8           tay
+02E6  A5 01        lda    $01
+02E8  85 07        sta    $07
+02EA  2B           pld
+02EB  3B           tsc
+02EC  18           clc
+02ED  69 06 00     adc    #$0006    ; Note: 16-bit instruction
+02F0  1B           tcs
+02F1  98           tya
+02F2  60           rts
+02F3  3B           tsc
+02F4  38           sec
+02F5  E9 00 00     sbc    #$0000    ; Note: 16-bit instruction
+02F8  1B           tcs
+02F9  0B           phd
+02FA  5B           tcd
+02FB  D4 09        pei    ($09)
+02FD  D4 07        pei    ($07)
+02FF  D4 05        pei    ($05)
+0301  D4 03        pei    ($03)
+0303  F4 00 00     pea    $0000
+0306  F4 00 00     pea    $0000
+0309  F4 0E 00     pea    $000E
+030C  20 00 00     jsr    $0000
+030F  F4 00 00     pea    $0000
+0312  F4 00 00     pea    $0000
+0315  20 00 00     jsr    $0000
+0318  A9 00 00     lda    #$0000    ; Note: 16-bit instruction
+031B  AA           tax
+031C  1A           inc    a
+031D  A8           tay
+031E  A5 01        lda    $01
+0320  85 09        sta    $09
+0322  2B           pld
+0323  3B           tsc
+0324  18           clc
+0325  69 08 00     adc    #$0008    ; Note: 16-bit instruction
+0328  1B           tcs
+0329  98           tya
+032A  60           rts
+032B  3B           tsc
+032C  38           sec
+032D  E9 02 00     sbc    #$0002    ; Note: 16-bit instruction
+0330  1B           tcs
+0331  0B           phd
+0332  5B           tcd
+0333  20 00 00     jsr    $0000
+0336  AD 00 00     lda    $0000
+0339  48           pha
+033A  AD 00 00     lda    $0000
+033D  48           pha
+033E  20 00 00     jsr    $0000
+0341  8D 00 00     sta    $0000
+0344  AD 00 00     lda    $0000
+0347  48           pha
+0348  AD 00 00     lda    $0000
+034B  48           pha
+034C  20 00 00     jsr    $0000
+034F  8D 00 00     sta    $0000
+0352  48           pha
+0353  AD 00 00     lda    $0000
+0356  48           pha
+0357  F4 00 00     pea    $0000
+035A  F4 00 00     pea    $0000
+035D  F4 0A 00     pea    $000A
+0360  20 00 00     jsr    $0000
+0363  F4 00 00     pea    $0000
+0366  F4 00 00     pea    $0000
+0369  20 00 00     jsr    $0000
+036C  F4 00 00     pea    $0000
+036F  F4 00 00     pea    $0000
+0372  20 00 00     jsr    $0000
+0375  85 01        sta    $01
+0377  48           pha
+0378  F4 00 00     pea    $0000
+037B  F4 00 00     pea    $0000
+037E  F4 08 00     pea    $0008
+0381  20 00 00     jsr    $0000
+0384  F4 00 00     pea    $0000
+0387  F4 00 00     pea    $0000
+038A  20 00 00     jsr    $0000
+038D  D4 01        pei    ($01)
+038F  F4 01 00     pea    $0001
+0392  F4 50 00     pea    $0050
+0395  F4 00 00     pea    $0000
+0398  20 00 00     jsr    $0000
+039B  F4 00 00     pea    $0000
+039E  AD 00 00     lda    $0000
+03A1  48           pha
+03A2  F4 06 00     pea    $0006
+03A5  20 00 00     jsr    $0000
+03A8  A5 03        lda    $03
+03AA  85 07        sta    $07
+03AC  2B           pld
+03AD  3B           tsc
+03AE  18           clc
+03AF  69 06 00     adc    #$0006    ; Note: 16-bit instruction
+03B2  1B           tcs
+03B3  60           rts
+03B4  3B           tsc
+03B5  38           sec
+03B6  E9 02 00     sbc    #$0002    ; Note: 16-bit instruction
+03B9  1B           tcs
+03BA  0B           phd
+03BB  5B           tcd
+03BC  A9 00 00     lda    #$0000    ; Note: 16-bit instruction
+03BF  85 01        sta    $01
+03C1  A0 06        ldy    #$06
+03C3  00           brk
+03C4  B1 01        lda    ($01),y
+03C6  D0 17        bne    $03DF
+03C8  A9 00 00     lda    #$0000    ; Note: 16-bit instruction
+03CB  A0 0C        ldy    #$0C
+03CD  00           brk
+03CE  91 01        sta    ($01),y
+03D0  92 01        sta    ($01)
+03D2  A0 02        ldy    #$02
+03D4  00           brk
+03D5  91 01        sta    ($01),y
+03D7  C8           iny
+03D8  C8           iny
+03D9  91 01        sta    ($01),y
+03DB  A5 01        lda    $01
+03DD  80 10        bra    $03EF
+03DF  A9 0E 00     lda    #$000E    ; Note: 16-bit instruction
+03E2  18           clc
+03E3  65 01        adc    $01
+03E5  85 01        sta    $01
+03E7  C9 00 00     cmp    #$0000    ; Note: 16-bit instruction
+03EA  D0 D5        bne    $03C1
+03EC  A9 00 00     lda    #$0000    ; Note: 16-bit instruction
+03EF  A8           tay
+03F0  2B           pld
+03F1  3B           tsc
+03F2  18           clc
+03F3  69 02 00     adc    #$0002    ; Note: 16-bit instruction
+03F6  1B           tcs
+03F7  98           tya
+03F8  60           rts
+03F9  3B           tsc
+03FA  38           sec
+03FB  E9 12 00     sbc    #$0012    ; Note: 16-bit instruction
+03FE  1B           tcs
+03FF  0B           phd
+0400  5B           tcd
+0401  18           clc
+0402  7B           tdc
+0403  69 1B 00     adc    #$001B    ; Note: 16-bit instruction
+0406  85 01        sta    $01
+0408  A9 08 44     lda    #$4408    ; Note: 16-bit instruction
+040B  85 09        sta    $09
+040D  A5 17        lda    $17
+040F  85 03        sta    $03
+0411  A5 17        lda    $17
+0413  85 07        sta    $07
+0415  A9 00 04     lda    #$0400    ; Note: 16-bit instruction
+0418  18           clc
+0419  65 17        adc    $17
+041B  85 05        sta    $05
+041D  D4 01        pei    ($01)
+041F  D4 19        pei    ($19)
+0421  18           clc
+0422  7B           tdc
+0423  69 03 00     adc    #$0003    ; Note: 16-bit instruction
+0426  48           pha
+0427  20 00 00     jsr    $0000
+042A  85 11        sta    $11
+042C  E2 20        sep    #$20      ; Note: m=1, x=0
+042E  A9 00        lda    #$00
+0430  A4 11        ldy    $11
+0432  91 17        sta    ($17),y
+0434  C2 20        rep    #$20      ; Note: m=0, x=1
+0436  98           tya
+0437  A8           tay
+0438  DA           phx
+0439  A6 15        ldx    $15
+043B  A5 13        lda    $13
+043D  95 13        sta    $13,x
+043F  8A           txa
+0440  FA           plx
+0441  2B           pld
+0442  48           pha
+0443  3B           tsc
+0444  18           clc
+0445  69 14 00     adc    #$0014    ; Note: 16-bit instruction
+0448  63 01        adc    $01,s
+044A  1B           tcs
+044B  98           tya
+044C  60           rts
+044D  3B           tsc
+044E  38           sec
+044F  E9 02 00     sbc    #$0002    ; Note: 16-bit instruction
+0452  1B           tcs
+0453  0B           phd
+0454  5B           tcd
+0455  A9 00 00     lda    #$0000    ; Note: 16-bit instruction
+0458  85 01        sta    $01
+045A  D4 01        pei    ($01)
+045C  20 00 00     jsr    $0000
+045F  A9 0E 00     lda    #$000E    ; Note: 16-bit instruction
+0462  18           clc
+0463  65 01        adc    $01
+0465  85 01        sta    $01
+0467  C9 00 00     cmp    #$0000    ; Note: 16-bit instruction
+046A  90 EE        bcc    $045A
+046C  2B           pld
+046D  3B           tsc
+046E  18           clc
+046F  69 02 00     adc    #$0002    ; Note: 16-bit instruction
+0472  1B           tcs
+0473  60           rts
+0474  3B           tsc
+0475  38           sec
+0476  E9 00 00     sbc    #$0000    ; Note: 16-bit instruction
+0479  1B           tcs
+047A  0B           phd
+047B  5B           tcd
+047C  F4 FF FF     pea    $FFFF
+047F  20 00 00     jsr    $0000
+0482  48           pha
+0483  D4 05        pei    ($05)
+0485  D4 03        pei    ($03)
+0487  20 00 00     jsr    $0000
+048A  A8           tay
+048B  A5 01        lda    $01
+048D  85 05        sta    $05
+048F  2B           pld
+0490  3B           tsc
+0491  18           clc
+0492  69 04 00     adc    #$0004    ; Note: 16-bit instruction
+0495  1B           tcs
+0496  98           tya
+0497  60           rts
+0498  3B           tsc
+0499  38           sec
+049A  E9 0A 00     sbc    #$000A    ; Note: 16-bit instruction
+049D  1B           tcs
+049E  0B           phd
+049F  5B           tcd
+04A0  A5 0F        lda    $0F
+04A2  D0 11        bne    $04B5
+04A4  A9 00 00     lda    #$0000    ; Note: 16-bit instruction
+04A7  A8           tay
+04A8  A5 0B        lda    $0B
+04AA  85 13        sta    $13
+04AC  2B           pld
+04AD  3B           tsc
+04AE  18           clc
+04AF  69 12 00     adc    #$0012    ; Note: 16-bit instruction
+04B2  1B           tcs
+04B3  98           tya
+04B4  60           rts
+04B5  64 05        stz    $05
+04B7  80 41        bra    $04FA
+04B9  A5 0F        lda    $0F
+04BB  85 07        sta    $07
+04BD  80 35        bra    $04F4
+04BF  B2 13        lda    ($13)
+04C1  A0 02        ldy    #$02
+04C3  00           brk
+04C4  D1 13        cmp    ($13),y
+04C6  B0 10        bcs    $04D8
+04C8  B2 13        lda    ($13)
+04CA  85 01        sta    $01
+04CC  B2 13        lda    ($13)
+04CE  1A           inc    a
+04CF  92 13        sta    ($13)
+04D1  B2 01        lda    ($01)
+04D3  29 FF 00     and    #$00FF    ; Note: 16-bit instruction
+04D6  80 05        bra    $04DD
+04D8  D4 13        pei    ($13)
+04DA  20 00 00     jsr    $0000
+04DD  85 01        sta    $01
+04DF  85 09        sta    $09
+04E1  A5 01        lda    $01
+04E3  C9 FF FF     cmp    #$FFFF    ; Note: 16-bit instruction
+04E6  F0 18        beq    $0500
+04E8  E2 20        sep    #$20      ; Note: m=1, x=0
+04EA  A5 09        lda    $09
+04EC  92 0D        sta    ($0D)
+04EE  C2 20        rep    #$20      ; Note: m=0, x=1
+04F0  E6 0D        inc    $0D
+04F2  C6 07        dec    $07
+04F4  A5 07        lda    $07
+04F6  D0 C7        bne    $04BF
+04F8  E6 05        inc    $05
+04FA  A5 05        lda    $05
+04FC  C5 11        cmp    $11
+04FE  90 B9        bcc    $04B9
+0500  A5 05        lda    $05
+0502  80 A3        bra    $04A7
+0504  3B           tsc
+0505  38           sec
+0506  E9 04 00     sbc    #$0004    ; Note: 16-bit instruction
+0509  1B           tcs
+050A  0B           phd
+050B  5B           tcd
+050C  18           clc
+050D  7B           tdc
+050E  69 0D 00     adc    #$000D    ; Note: 16-bit instruction
+0511  85 01        sta    $01
+0513  48           pha
+0514  D4 0B        pei    ($0B)
+0516  D4 09        pei    ($09)
+0518  20 00 00     jsr    $0000
+051B  85 03        sta    $03
+051D  A8           tay
+051E  DA           phx
+051F  A6 07        ldx    $07
+0521  A5 05        lda    $05
+0523  95 05        sta    $05,x
+0525  8A           txa
+0526  FA           plx
+0527  2B           pld
+0528  48           pha
+0529  3B           tsc
+052A  18           clc
+052B  69 06 00     adc    #$0006    ; Note: 16-bit instruction
+052E  63 01        adc    $01,s
+0530  1B           tcs
+0531  98           tya
+0532  60           rts
+0533  3B           tsc
+0534  38           sec
+0535  E9 21 00     sbc    #$0021    ; Note: 16-bit instruction
+0538  1B           tcs
+0539  0B           phd
+053A  5B           tcd
+053B  64 12        stz    $12
+053D  A5 26        lda    $26
+053F  85 1A        sta    $1A
+0541  E2 20        sep    #$20      ; Note: m=1, x=0
+0543  B2 26        lda    ($26)
+0545  85 11        sta    $11
+0547  C2 20        rep    #$20      ; Note: m=0, x=1
+0549  A5 11        lda    $11
+054B  29 FF 00     and    #$00FF    ; Note: 16-bit instruction
+054E  D0 10        bne    $0560
+0550  A5 12        lda    $12
+0552  A8           tay
+0553  A5 22        lda    $22
+0555  85 28        sta    $28
+0557  2B           pld
+0558  3B           tsc
+0559  18           clc
+055A  69 27 00     adc    #$0027    ; Note: 16-bit instruction
+055D  1B           tcs
+055E  98           tya
+055F  60           rts
+0560  E6 1A        inc    $1A
+0562  E2 20        sep    #$20      ; Note: m=1, x=0
+0564  A5 11        lda    $11
+0566  C9 25        cmp    #$25
+0568  C2 20        rep    #$20      ; Note: m=0, x=1
+056A  F0 5F        beq    $05CB
+056C  A5 12        lda    $12
+056E  85 0F        sta    $0F
+0570  B2 24        lda    ($24)
+0572  A0 02        ldy    #$02
+0574  00           brk
+0575  D1 24        cmp    ($24),y
+0577  B0 18        bcs    $0591
+0579  B2 24        lda    ($24)
+057B  85 01        sta    $01
+057D  B2 24        lda    ($24)
+057F  1A           inc    a
+0580  92 24        sta    ($24)
+0582  E2 20        sep    #$20      ; Note: m=1, x=0
+0584  A5 11        lda    $11
+0586  92 01        sta    ($01)
+0588  C2 20        rep    #$20      ; Note: m=0, x=1
+058A  A5 11        lda    $11
+058C  29 FF 00     and    #$00FF    ; Note: 16-bit instruction
+058F  80 0B        bra    $059C
+0591  A5 11        lda    $11
+0593  29 FF 00     and    #$00FF    ; Note: 16-bit instruction
+0596  48           pha
+0597  D4 24        pei    ($24)
+0599  20 00 00     jsr    $0000
+059C  85 01        sta    $01
+059E  C9 FF FF     cmp    #$FFFF    ; Note: 16-bit instruction
+05A1  D0 03        bne    $05A6
+05A3  82 EC 05     brl    $0B92
+05A6  E6 0F        inc    $0F
+05A8  E2 20        sep    #$20      ; Note: m=1, x=0
+05AA  B2 1A        lda    ($1A)
+05AC  85 11        sta    $11
+05AE  C2 20        rep    #$20      ; Note: m=0, x=1
+05B0  A5 11        lda    $11
+05B2  29 FF 00     and    #$00FF    ; Note: 16-bit instruction
+05B5  D0 04        bne    $05BB
+05B7  A5 0F        lda    $0F
+05B9  80 97        bra    $0552
+05BB  E6 1A        inc    $1A
+05BD  E2 20        sep    #$20      ; Note: m=1, x=0
+05BF  A5 11        lda    $11
+05C1  C9 25        cmp    #$25
+05C3  C2 20        rep    #$20      ; Note: m=0, x=1
+05C5  D0 A9        bne    $0570
+05C7  A5 0F        lda    $0F
+05C9  85 12        sta    $12
+05CB  64 0D        stz    $0D
+05CD  A9 20 00     lda    #$0020    ; Note: 16-bit instruction
+05D0  85 14        sta    $14
+05D2  A5 1A        lda    $1A
+05D4  85 01        sta    $01
+05D6  E6 1A        inc    $1A
+05D8  E2 20        sep    #$20      ; Note: m=1, x=0
+05DA  B2 01        lda    ($01)
+05DC  85 11        sta    $11
+05DE  C2 20        rep    #$20      ; Note: m=0, x=1
+05E0  A5 11        lda    $11
+05E2  29 FF 00     and    #$00FF    ; Note: 16-bit instruction
+05E5  20 00 00     jsr    $0000
+05E8  06 00        asl    $00
+05EA  20 00 00     jsr    $0000
+05ED  00           brk
+05EE  23 00        and    $00,s
+05F0  00           brk
+05F1  00           brk
+05F2  2A           rol    a
+05F3  00           brk
+05F4  00           brk
+05F5  00           brk
+05F6  2B           pld
+05F7  00           brk
+05F8  00           brk
+05F9  00           brk
+05FA  2D 00 00     and    $0000
+05FD  00           brk
+05FE  30 00        bmi    $0600
+0600  00           brk
+0601  00           brk
+0602  00           brk
+0603  00           brk
+0604  A9 01 00     lda    #$0001    ; Note: 16-bit instruction
+0607  04 0D        tsb    $0D
+0609  80 C7        bra    $05D2
+060B  A9 02 00     lda    #$0002    ; Note: 16-bit instruction
+060E  80 F7        bra    $0607
+0610  A9 04 00     lda    #$0004    ; Note: 16-bit instruction
+0613  80 F2        bra    $0607
+0615  A9 08 00     lda    #$0008    ; Note: 16-bit instruction
+0618  80 ED        bra    $0607
+061A  E6 28        inc    $28
+061C  E6 28        inc    $28
+061E  A9 FE FF     lda    #$FFFE    ; Note: 16-bit instruction
+0621  18           clc
+0622  65 28        adc    $28
+0624  85 01        sta    $01
+0626  B2 01        lda    ($01)
+0628  85 0F        sta    $0F
+062A  A5 0F        lda    $0F
+062C  10 0B        bpl    $0639
+062E  A9 01 00     lda    #$0001    ; Note: 16-bit instruction
+0631  04 0D        tsb    $0D
+0633  38           sec
+0634  3A           dec    a
+0635  E5 0F        sbc    $0F
+0637  85 0F        sta    $0F
+0639  E2 20        sep    #$20      ; Note: m=1, x=0
+063B  B2 1A        lda    ($1A)
+063D  85 11        sta    $11
+063F  C2 20        rep    #$20      ; Note: m=0, x=1
+0641  E6 1A        inc    $1A
+0643  80 4A        bra    $068F
+0645  A9 30 00     lda    #$0030    ; Note: 16-bit instruction
+0648  85 14        sta    $14
+064A  64 0F        stz    $0F
+064C  80 2D        bra    $067B
+064E  A5 11        lda    $11
+0650  29 FF 00     and    #$00FF    ; Note: 16-bit instruction
+0653  85 01        sta    $01
+0655  A5 0F        lda    $0F
+0657  0A           asl    a
+0658  0A           asl    a
+0659  0A           asl    a
+065A  85 05        sta    $05
+065C  18           clc
+065D  65 01        adc    $01
+065F  85 09        sta    $09
+0661  18           clc
+0662  65 0F        adc    $0F
+0664  85 01        sta    $01
+0666  18           clc
+0667  65 0F        adc    $0F
+0669  85 05        sta    $05
+066B  18           clc
+066C  69 D0 FF     adc    #$FFD0    ; Note: 16-bit instruction
+066F  85 0F        sta    $0F
+0671  E2 20        sep    #$20      ; Note: m=1, x=0
+0673  B2 1A        lda    ($1A)
+0675  85 11        sta    $11
+0677  C2 20        rep    #$20      ; Note: m=0, x=1
+0679  E6 1A        inc    $1A
+067B  A5 11        lda    $11
+067D  29 FF 00     and    #$00FF    ; Note: 16-bit instruction
+0680  85 01        sta    $01
+0682  E2 20        sep    #$20      ; Note: m=1, x=0
+0684  A6 01        ldx    $01
+0686  BD 00 00     lda    $0000,x
+0689  29 04        and    #$04
+068B  C2 20        rep    #$20      ; Note: m=0, x=1
+068D  D0 BF        bne    $064E
+068F  A5 0F        lda    $0F
+0691  85 18        sta    $18
+0693  A9 C6 7D     lda    #$7DC6    ; Note: 16-bit instruction
+0696  85 0F        sta    $0F
+0698  E2 20        sep    #$20      ; Note: m=1, x=0
+069A  A5 11        lda    $11
+069C  C9 2E        cmp    #$2E
+069E  C2 20        rep    #$20      ; Note: m=0, x=1
+06A0  F0 03        beq    $06A5
+06A2  82 88 00     brl    $072D
+06A5  A5 1A        lda    $1A
+06A7  85 01        sta    $01
+06A9  E6 1A        inc    $1A
+06AB  E2 20        sep    #$20      ; Note: m=1, x=0
+06AD  B2 01        lda    ($01)
+06AF  85 11        sta    $11
+06B1  C9 2A        cmp    #$2A
+06B3  C2 20        rep    #$20      ; Note: m=0, x=1
+06B5  D0 25        bne    $06DC
+06B7  E6 28        inc    $28
+06B9  E6 28        inc    $28
+06BB  A9 FE FF     lda    #$FFFE    ; Note: 16-bit instruction
+06BE  18           clc
+06BF  65 28        adc    $28
+06C1  85 01        sta    $01
+06C3  B2 01        lda    ($01)
+06C5  85 0F        sta    $0F
+06C7  A5 0F        lda    $0F
+06C9  10 05        bpl    $06D0
+06CB  A9 C6 7D     lda    #$7DC6    ; Note: 16-bit instruction
+06CE  85 0F        sta    $0F
+06D0  E2 20        sep    #$20      ; Note: m=1, x=0
+06D2  B2 1A        lda    ($1A)
+06D4  85 11        sta    $11
+06D6  C2 20        rep    #$20      ; Note: m=0, x=1
+06D8  E6 1A        inc    $1A
+06DA  80 45        bra    $0721
+06DC  64 0F        stz    $0F
+06DE  80 2D        bra    $070D
+06E0  A5 11        lda    $11
+06E2  29 FF 00     and    #$00FF    ; Note: 16-bit instruction
+06E5  85 01        sta    $01
+06E7  A5 0F        lda    $0F
+06E9  0A           asl    a
+06EA  0A           asl    a
+06EB  0A           asl    a
+06EC  85 05        sta    $05
+06EE  18           clc
+06EF  65 01        adc    $01
+06F1  85 09        sta    $09
+06F3  18           clc
+06F4  65 0F        adc    $0F
+06F6  85 01        sta    $01
+06F8  18           clc
+06F9  65 0F        adc    $0F
+06FB  85 05        sta    $05
+06FD  18           clc
+06FE  69 D0 FF     adc    #$FFD0    ; Note: 16-bit instruction
+0701  85 0F        sta    $0F
+0703  E2 20        sep    #$20      ; Note: m=1, x=0
+0705  B2 1A        lda    ($1A)
+0707  85 11        sta    $11
+0709  C2 20        rep    #$20      ; Note: m=0, x=1
+070B  E6 1A        inc    $1A
+070D  A5 11        lda    $11
+070F  29 FF 00     and    #$00FF    ; Note: 16-bit instruction
+0712  85 01        sta    $01
+0714  E2 20        sep    #$20      ; Note: m=1, x=0
+0716  A6 01        ldx    $01
+0718  BD 00 00     lda    $0000,x
+071B  29 04        and    #$04
+071D  C2 20        rep    #$20      ; Note: m=0, x=1
+071F  D0 BF        bne    $06E0
+0721  A5 0F        lda    $0F
+0723  C9 C6 7D     cmp    #$7DC6    ; Note: 16-bit instruction
+0726  F0 05        beq    $072D
+0728  A9 20 00     lda    #$0020    ; Note: 16-bit instruction
+072B  85 14        sta    $14
+072D  A5 0F        lda    $0F
+072F  85 16        sta    $16
+0731  E2 20        sep    #$20      ; Note: m=1, x=0
+0733  A5 11        lda    $11
+0735  C9 68        cmp    #'h'
+0737  C2 20        rep    #$20      ; Note: m=0, x=1
+0739  D0 05        bne    $0740
+073B  A9 80 00     lda    #$0080    ; Note: 16-bit instruction
+073E  80 1C        bra    $075C
+0740  E2 20        sep    #$20      ; Note: m=1, x=0
+0742  A5 11        lda    $11
+0744  C9 6C        cmp    #'l'
+0746  C2 20        rep    #$20      ; Note: m=0, x=1
+0748  D0 05        bne    $074F
+074A  A9 40 00     lda    #$0040    ; Note: 16-bit instruction
+074D  80 0D        bra    $075C
+074F  E2 20        sep    #$20      ; Note: m=1, x=0
+0751  A5 11        lda    $11
+0753  C9 4C        cmp    #'L'
+0755  C2 20        rep    #$20      ; Note: m=0, x=1
+0757  D0 0F        bne    $0768
+0759  A9 00 01     lda    #$0100    ; Note: 16-bit instruction
+075C  04 0D        tsb    $0D
+075E  E2 20        sep    #$20      ; Note: m=1, x=0
+0760  B2 1A        lda    ($1A)
+0762  85 11        sta    $11
+0764  C2 20        rep    #$20      ; Note: m=0, x=1
+0766  E6 1A        inc    $1A
+0768  A5 1A        lda    $1A
+076A  85 26        sta    $26
+076C  A5 11        lda    $11
+076E  29 FF 00     and    #$00FF    ; Note: 16-bit instruction
+0771  20 00 00     jsr    $0000
+0774  0B           phd
+0775  00           brk
+0776  25 00        and    $00
+0778  00           brk
+0779  00           brk
+077A  58           cli
+077B  00           brk
+077C  00           brk
+077D  00           brk
+077E  63 00        adc    $00,s
+0780  00           brk
+0781  00           brk
+0782  64 00        stz    $00
+0784  00           brk
+0785  00           brk
+0786  69 00 00     adc    #$0000    ; Note: 16-bit instruction
+0789  00           brk
+078A  6E 00 00     ror    $0000
+078D  00           brk
+078E  6F 00 00 00  adc    $000000
+0792  70 00        bvs    $0794
+0794  00           brk
+0795  00           brk
+0796  73 00        adc    ($00,s),y
+0798  00           brk
+0799  00           brk
+079A  75 00        adc    $00,x
+079C  00           brk
+079D  00           brk
+079E  78           sei
+079F  00           brk
+07A0  00           brk
+07A1  00           brk
+07A2  00           brk
+07A3  00           brk
+07A4  A5 0D        lda    $0D
+07A6  29 80 00     and    #$0080    ; Note: 16-bit instruction
+07A9  F0 37        beq    $07E2
+07AB  E6 28        inc    $28
+07AD  E6 28        inc    $28
+07AF  A9 FE FF     lda    #$FFFE    ; Note: 16-bit instruction
+07B2  18           clc
+07B3  65 28        adc    $28
+07B5  85 01        sta    $01
+07B7  B2 01        lda    ($01)
+07B9  85 05        sta    $05
+07BB  A5 12        lda    $12
+07BD  92 05        sta    ($05)
+07BF  64 0F        stz    $0F
+07C1  A5 0D        lda    $0D
+07C3  29 10 00     and    #$0010    ; Note: 16-bit instruction
+07C6  D0 03        bne    $07CB
+07C8  82 BF 02     brl    $0A8A
+07CB  A5 0D        lda    $0D
+07CD  29 20 00     and    #$0020    ; Note: 16-bit instruction
+07D0  D0 03        bne    $07D5
+07D2  82 8B 02     brl    $0A60
+07D5  C6 1A        dec    $1A
+07D7  E2 20        sep    #$20      ; Note: m=1, x=0
+07D9  A9 2D        lda    #$2D
+07DB  92 1A        sta    ($1A)
+07DD  C2 20        rep    #$20      ; Note: m=0, x=1
+07DF  82 A6 02     brl    $0A88
+07E2  A5 0D        lda    $0D
+07E4  29 40 00     and    #$0040    ; Note: 16-bit instruction
+07E7  F0 C2        beq    $07AB
+07E9  E6 28        inc    $28
+07EB  E6 28        inc    $28
+07ED  A9 FE FF     lda    #$FFFE    ; Note: 16-bit instruction
+07F0  18           clc
+07F1  65 28        adc    $28
+07F3  85 01        sta    $01
+07F5  B2 01        lda    ($01)
+07F7  85 05        sta    $05
+07F9  A0 00        ldy    #$00
+07FB  00           brk
+07FC  A5 12        lda    $12
+07FE  10 01        bpl    $0801
+0800  88           dey
+0801  85 01        sta    $01
+0803  84 03        sty    $03
+0805  A5 01        lda    $01
+0807  92 05        sta    ($05)
+0809  A5 03        lda    $03
+080B  A0 02        ldy    #$02
+080D  00           brk
+080E  91 05        sta    ($05),y
+0810  80 AD        bra    $07BF
+0812  E6 28        inc    $28
+0814  E6 28        inc    $28
+0816  A9 FE FF     lda    #$FFFE    ; Note: 16-bit instruction
+0819  18           clc
+081A  65 28        adc    $28
+081C  85 01        sta    $01
+081E  B2 01        lda    ($01)
+0820  85 1A        sta    $1A
+0822  48           pha
+0823  20 00 00     jsr    $0000
+0826  85 0F        sta    $0F
+0828  A5 16        lda    $16
+082A  C9 C6 7D     cmp    #$7DC6    ; Note: 16-bit instruction
+082D  F0 92        beq    $07C1
+082F  38           sec
+0830  A5 16        lda    $16
+0832  E5 0F        sbc    $0F
+0834  70 03        bvs    $0839
+0836  49 00 80     eor    #$8000    ; Note: 16-bit instruction
+0839  30 86        bmi    $07C1
+083B  A5 16        lda    $16
+083D  85 0F        sta    $0F
+083F  82 7F FF     brl    $07C1
+0842  E6 28        inc    $28
+0844  E6 28        inc    $28
+0846  A9 FE FF     lda    #$FFFE    ; Note: 16-bit instruction
+0849  18           clc
+084A  65 28        adc    $28
+084C  85 01        sta    $01
+084E  E2 20        sep    #$20      ; Note: m=1, x=0
+0850  B2 01        lda    ($01)
+0852  85 11        sta    $11
+0854  C2 20        rep    #$20      ; Note: m=0, x=1
+0856  A9 00 00     lda    #$0000    ; Note: 16-bit instruction
+0859  85 1A        sta    $1A
+085B  E2 20        sep    #$20      ; Note: m=1, x=0
+085D  A5 11        lda    $11
+085F  92 1A        sta    ($1A)
+0861  C2 20        rep    #$20      ; Note: m=0, x=1
+0863  A9 01 00     lda    #$0001    ; Note: 16-bit instruction
+0866  80 D5        bra    $083D
+0868  A9 08 00     lda    #$0008    ; Note: 16-bit instruction
+086B  80 1A        bra    $0887
+086D  A9 48 00     lda    #$0048    ; Note: 16-bit instruction
+0870  04 0D        tsb    $0D
+0872  E2 20        sep    #$20      ; Note: m=1, x=0
+0874  A9 78        lda    #'x'
+0876  85 11        sta    $11
+0878  C2 20        rep    #$20      ; Note: m=0, x=1
+087A  A9 10 00     lda    #$0010    ; Note: 16-bit instruction
+087D  80 08        bra    $0887
+087F  A9 10 00     lda    #$0010    ; Note: 16-bit instruction
+0882  04 0D        tsb    $0D
+0884  A9 0A 00     lda    #$000A    ; Note: 16-bit instruction
+0887  85 0F        sta    $0F
+0889  E2 20        sep    #$20      ; Note: m=1, x=0
+088B  A5 11        lda    $11
+088D  C9 58        cmp    #'X'
+088F  C2 20        rep    #$20      ; Note: m=0, x=1
+0891  D0 05        bne    $0898
+0893  A9 00 00     lda    #$0000    ; Note: 16-bit instruction
+0896  80 03        bra    $089B
+0898  A9 00 00     lda    #$0000    ; Note: 16-bit instruction
+089B  85 20        sta    $20
+089D  A5 0D        lda    $0D
+089F  29 40 00     and    #$0040    ; Note: 16-bit instruction
+08A2  F0 1B        beq    $08BF
+08A4  A9 04 00     lda    #$0004    ; Note: 16-bit instruction
+08A7  18           clc
+08A8  65 28        adc    $28
+08AA  85 28        sta    $28
+08AC  18           clc
+08AD  69 FC FF     adc    #$FFFC    ; Note: 16-bit instruction
+08B0  85 01        sta    $01
+08B2  B2 01        lda    ($01)
+08B4  85 1C        sta    $1C
+08B6  A0 02        ldy    #$02
+08B8  00           brk
+08B9  B1 01        lda    ($01),y
+08BB  85 1E        sta    $1E
+08BD  80 33        bra    $08F2
+08BF  A5 0D        lda    $0D
+08C1  29 10 00     and    #$0010    ; Note: 16-bit instruction
+08C4  F0 1A        beq    $08E0
+08C6  E6 28        inc    $28
+08C8  E6 28        inc    $28
+08CA  A9 FE FF     lda    #$FFFE    ; Note: 16-bit instruction
+08CD  18           clc
+08CE  65 28        adc    $28
+08D0  85 01        sta    $01
+08D2  A0 00        ldy    #$00
+08D4  00           brk
+08D5  B2 01        lda    ($01)
+08D7  10 01        bpl    $08DA
+08D9  88           dey
+08DA  85 1C        sta    $1C
+08DC  84 1E        sty    $1E
+08DE  80 12        bra    $08F2
+08E0  E6 28        inc    $28
+08E2  E6 28        inc    $28
+08E4  A9 FE FF     lda    #$FFFE    ; Note: 16-bit instruction
+08E7  18           clc
+08E8  65 28        adc    $28
+08EA  85 01        sta    $01
+08EC  B2 01        lda    ($01)
+08EE  85 1C        sta    $1C
+08F0  64 1E        stz    $1E
+08F2  A5 0D        lda    $0D
+08F4  29 10 00     and    #$0010    ; Note: 16-bit instruction
+08F7  F0 18        beq    $0911
+08F9  A5 1E        lda    $1E
+08FB  10 14        bpl    $0911
+08FD  38           sec
+08FE  A9 00 00     lda    #$0000    ; Note: 16-bit instruction
+0901  E5 1C        sbc    $1C
+0903  85 1C        sta    $1C
+0905  A9 00 00     lda    #$0000    ; Note: 16-bit instruction
+0908  E5 1E        sbc    $1E
+090A  85 1E        sta    $1E
+090C  A9 20 00     lda    #$0020    ; Note: 16-bit instruction
+090F  04 0D        tsb    $0D
+0911  A9 00 00     lda    #$0000    ; Note: 16-bit instruction
+0914  85 1A        sta    $1A
+0916  A5 16        lda    $16
+0918  C9 C6 7D     cmp    #$7DC6    ; Note: 16-bit instruction
+091B  D0 05        bne    $0922
+091D  A9 01 00     lda    #$0001    ; Note: 16-bit instruction
+0920  85 16        sta    $16
+0922  A5 1C        lda    $1C
+0924  05 1E        ora    $1E
+0926  D0 04        bne    $092C
+0928  A5 16        lda    $16
+092A  F0 46        beq    $0972
+092C  C6 1A        dec    $1A
+092E  A0 00        ldy    #$00
+0930  00           brk
+0931  A5 0F        lda    $0F
+0933  10 01        bpl    $0936
+0935  88           dey
+0936  85 01        sta    $01
+0938  84 03        sty    $03
+093A  D4 03        pei    ($03)
+093C  D4 01        pei    ($01)
+093E  D4 1E        pei    ($1E)
+0940  D4 1C        pei    ($1C)
+0942  20 00 00     jsr    $0000
+0945  85 01        sta    $01
+0947  86 03        stx    $03
+0949  E2 20        sep    #$20      ; Note: m=1, x=0
+094B  A4 01        ldy    $01
+094D  B1 20        lda    ($20),y
+094F  92 1A        sta    ($1A)
+0951  C2 20        rep    #$20      ; Note: m=0, x=1
+0953  A0 00        ldy    #$00
+0955  00           brk
+0956  A5 0F        lda    $0F
+0958  10 01        bpl    $095B
+095A  88           dey
+095B  85 01        sta    $01
+095D  84 03        sty    $03
+095F  D4 03        pei    ($03)
+0961  D4 01        pei    ($01)
+0963  D4 1E        pei    ($1E)
+0965  D4 1C        pei    ($1C)
+0967  20 00 00     jsr    $0000
+096A  85 1C        sta    $1C
+096C  86 1E        stx    $1E
+096E  05 1E        ora    $1E
+0970  D0 BA        bne    $092C
+0972  38           sec
+0973  A9 00 00     lda    #$0000    ; Note: 16-bit instruction
+0976  E5 1A        sbc    $1A
+0978  85 0F        sta    $0F
+097A  A5 0D        lda    $0D
+097C  29 08 00     and    #$0008    ; Note: 16-bit instruction
+097F  D0 03        bne    $0984
+0981  82 B7 00     brl    $0A3B
+0984  E2 20        sep    #$20      ; Note: m=1, x=0
+0986  A5 11        lda    $11
+0988  C9 6F        cmp    #'o'
+098A  C2 20        rep    #$20      ; Note: m=0, x=1
+098C  D0 28        bne    $09B6
+098E  A5 0F        lda    $0F
+0990  F0 1C        beq    $09AE
+0992  E2 20        sep    #$20      ; Note: m=1, x=0
+0994  B2 1A        lda    ($1A)
+0996  C9 30        cmp    #$30
+0998  C2 20        rep    #$20      ; Note: m=0, x=1
+099A  D0 03        bne    $099F
+099C  82 9C 00     brl    $0A3B
+099F  38           sec
+09A0  A5 0F        lda    $0F
+09A2  E5 16        sbc    $16
+09A4  70 03        bvs    $09A9
+09A6  49 00 80     eor    #$8000    ; Note: 16-bit instruction
+09A9  30 03        bmi    $09AE
+09AB  82 8D 00     brl    $0A3B
+09AE  A5 0F        lda    $0F
+09B0  1A           inc    a
+09B1  85 16        sta    $16
+09B3  82 85 00     brl    $0A3B
+09B6  E2 20        sep    #$20      ; Note: m=1, x=0
+09B8  A5 11        lda    $11
+09BA  C9 78        cmp    #'x'
+09BC  C2 20        rep    #$20      ; Note: m=0, x=1
+09BE  F0 0A        beq    $09CA
+09C0  E2 20        sep    #$20      ; Note: m=1, x=0
+09C2  A5 11        lda    $11
+09C4  C9 58        cmp    #'X'
+09C6  C2 20        rep    #$20      ; Note: m=0, x=1
+09C8  D0 71        bne    $0A3B
+09CA  A5 0F        lda    $0F
+09CC  F0 6D        beq    $0A3B
+09CE  E2 20        sep    #$20      ; Note: m=1, x=0
+09D0  B2 1A        lda    ($1A)
+09D2  C9 30        cmp    #$30
+09D4  C2 20        rep    #$20      ; Note: m=0, x=1
+09D6  D0 38        bne    $0A10
+09D8  80 61        bra    $0A3B
+09DA  A9 00 00     lda    #$0000    ; Note: 16-bit instruction
+09DD  C5 1A        cmp    $1A
+09DF  B0 3B        bcs    $0A1C
+09E1  C6 1A        dec    $1A
+09E3  E2 20        sep    #$20      ; Note: m=1, x=0
+09E5  A9 30        lda    #$30
+09E7  92 1A        sta    ($1A)
+09E9  C2 20        rep    #$20      ; Note: m=0, x=1
+09EB  E6 0F        inc    $0F
+09ED  80 21        bra    $0A10
+09EF  A5 14        lda    $14
+09F1  C9 30 00     cmp    #$0030    ; Note: 16-bit instruction
+09F4  D0 2D        bne    $0A23
+09F6  A9 02 00     lda    #$0002    ; Note: 16-bit instruction
+09F9  18           clc
+09FA  65 0F        adc    $0F
+09FC  85 01        sta    $01
+09FE  38           sec
+09FF  E5 18        sbc    $18
+0A01  70 03        bvs    $0A06
+0A03  49 00 80     eor    #$8000    ; Note: 16-bit instruction
+0A06  30 1B        bmi    $0A23
+0A08  A9 FE FF     lda    #$FFFE    ; Note: 16-bit instruction
+0A0B  18           clc
+0A0C  65 18        adc    $18
+0A0E  85 16        sta    $16
+0A10  38           sec
+0A11  A5 0F        lda    $0F
+0A13  E5 16        sbc    $16
+0A15  70 03        bvs    $0A1A
+0A17  49 00 80     eor    #$8000    ; Note: 16-bit instruction
+0A1A  10 BE        bpl    $09DA
+0A1C  A5 0D        lda    $0D
+0A1E  29 01 00     and    #$0001    ; Note: 16-bit instruction
+0A21  F0 CC        beq    $09EF
+0A23  C6 1A        dec    $1A
+0A25  E2 20        sep    #$20      ; Note: m=1, x=0
+0A27  A5 11        lda    $11
+0A29  92 1A        sta    ($1A)
+0A2B  C2 20        rep    #$20      ; Note: m=0, x=1
+0A2D  C6 1A        dec    $1A
+0A2F  E2 20        sep    #$20      ; Note: m=1, x=0
+0A31  A9 30        lda    #$30
+0A33  92 1A        sta    ($1A)
+0A35  C2 20        rep    #$20      ; Note: m=0, x=1
+0A37  E6 0F        inc    $0F
+0A39  E6 0F        inc    $0F
+0A3B  38           sec
+0A3C  A5 0F        lda    $0F
+0A3E  E5 16        sbc    $16
+0A40  70 03        bvs    $0A45
+0A42  49 00 80     eor    #$8000    ; Note: 16-bit instruction
+0A45  10 03        bpl    $0A4A
+0A47  82 77 FD     brl    $07C1
+0A4A  A9 00 00     lda    #$0000    ; Note: 16-bit instruction
+0A4D  C5 1A        cmp    $1A
+0A4F  90 03        bcc    $0A54
+0A51  82 6D FD     brl    $07C1
+0A54  C6 1A        dec    $1A
+0A56  E2 20        sep    #$20      ; Note: m=1, x=0
+0A58  A9 30        lda    #$30
+0A5A  92 1A        sta    ($1A)
+0A5C  C2 20        rep    #$20      ; Note: m=0, x=1
+0A5E  80 D9        bra    $0A39
+0A60  A5 0D        lda    $0D
+0A62  29 02 00     and    #$0002    ; Note: 16-bit instruction
+0A65  F0 0C        beq    $0A73
+0A67  C6 1A        dec    $1A
+0A69  E2 20        sep    #$20      ; Note: m=1, x=0
+0A6B  A9 2B        lda    #$2B
+0A6D  92 1A        sta    ($1A)
+0A6F  C2 20        rep    #$20      ; Note: m=0, x=1
+0A71  80 15        bra    $0A88
+0A73  A5 0D        lda    $0D
+0A75  29 04 00     and    #$0004    ; Note: 16-bit instruction
+0A78  F0 0C        beq    $0A86
+0A7A  C6 1A        dec    $1A
+0A7C  E2 20        sep    #$20      ; Note: m=1, x=0
+0A7E  A9 20        lda    #$20
+0A80  92 1A        sta    ($1A)
+0A82  C2 20        rep    #$20      ; Note: m=0, x=1
+0A84  80 02        bra    $0A88
+0A86  C6 0F        dec    $0F
+0A88  E6 0F        inc    $0F
+0A8A  A5 12        lda    $12
+0A8C  18           clc
+0A8D  65 0F        adc    $0F
+0A8F  85 12        sta    $12
+0A91  A5 0D        lda    $0D
+0A93  29 01 00     and    #$0001    ; Note: 16-bit instruction
+0A96  F0 03        beq    $0A9B
+0A98  82 AA 00     brl    $0B45
+0A9B  A5 14        lda    $14
+0A9D  C9 30 00     cmp    #$0030    ; Note: 16-bit instruction
+0AA0  F0 03        beq    $0AA5
+0AA2  82 8E 00     brl    $0B33
+0AA5  A5 0D        lda    $0D
+0AA7  29 10 00     and    #$0010    ; Note: 16-bit instruction
+0AAA  D0 03        bne    $0AAF
+0AAC  82 84 00     brl    $0B33
+0AAF  A5 0D        lda    $0D
+0AB1  29 26 00     and    #$0026    ; Note: 16-bit instruction
+0AB4  F0 7D        beq    $0B33
+0AB6  B2 24        lda    ($24)
+0AB8  A0 02        ldy    #$02
+0ABA  00           brk
+0ABB  D1 24        cmp    ($24),y
+0ABD  B0 1E        bcs    $0ADD
+0ABF  B2 24        lda    ($24)
+0AC1  85 01        sta    $01
+0AC3  B2 24        lda    ($24)
+0AC5  1A           inc    a
+0AC6  92 24        sta    ($24)
+0AC8  A5 1A        lda    $1A
+0ACA  85 05        sta    $05
+0ACC  E6 1A        inc    $1A
+0ACE  E2 20        sep    #$20      ; Note: m=1, x=0
+0AD0  B2 05        lda    ($05)
+0AD2  92 01        sta    ($01)
+0AD4  C2 20        rep    #$20      ; Note: m=0, x=1
+0AD6  B2 05        lda    ($05)
+0AD8  29 FF 00     and    #$00FF    ; Note: 16-bit instruction
+0ADB  80 11        bra    $0AEE
+0ADD  A5 1A        lda    $1A
+0ADF  85 01        sta    $01
+0AE1  E6 1A        inc    $1A
+0AE3  B2 01        lda    ($01)
+0AE5  29 FF 00     and    #$00FF    ; Note: 16-bit instruction
+0AE8  48           pha
+0AE9  D4 24        pei    ($24)
+0AEB  20 00 00     jsr    $0000
+0AEE  85 01        sta    $01
+0AF0  C9 FF FF     cmp    #$FFFF    ; Note: 16-bit instruction
+0AF3  D0 03        bne    $0AF8
+0AF5  82 9A 00     brl    $0B92
+0AF8  C6 18        dec    $18
+0AFA  C6 0F        dec    $0F
+0AFC  80 35        bra    $0B33
+0AFE  B2 24        lda    ($24)
+0B00  A0 02        ldy    #$02
+0B02  00           brk
+0B03  D1 24        cmp    ($24),y
+0B05  B0 18        bcs    $0B1F
+0B07  B2 24        lda    ($24)
+0B09  85 01        sta    $01
+0B0B  B2 24        lda    ($24)
+0B0D  1A           inc    a
+0B0E  92 24        sta    ($24)
+0B10  E2 20        sep    #$20      ; Note: m=1, x=0
+0B12  A5 14        lda    $14
+0B14  92 01        sta    ($01)
+0B16  C2 20        rep    #$20      ; Note: m=0, x=1
+0B18  A5 14        lda    $14
+0B1A  29 FF 00     and    #$00FF    ; Note: 16-bit instruction
+0B1D  80 0B        bra    $0B2A
+0B1F  A5 14        lda    $14
+0B21  29 FF 00     and    #$00FF    ; Note: 16-bit instruction
+0B24  48           pha
+0B25  D4 24        pei    ($24)
+0B27  20 00 00     jsr    $0000
+0B2A  85 01        sta    $01
+0B2C  C9 FF FF     cmp    #$FFFF    ; Note: 16-bit instruction
+0B2F  F0 61        beq    $0B92
+0B31  E6 12        inc    $12
+0B33  A5 18        lda    $18
+0B35  85 01        sta    $01
+0B37  C6 18        dec    $18
+0B39  38           sec
+0B3A  A5 0F        lda    $0F
+0B3C  E5 01        sbc    $01
+0B3E  70 03        bvs    $0B43
+0B40  49 00 80     eor    #$8000    ; Note: 16-bit instruction
+0B43  10 B9        bpl    $0AFE
+0B45  A5 0F        lda    $0F
+0B47  85 16        sta    $16
+0B49  A5 0F        lda    $0F
+0B4B  85 01        sta    $01
+0B4D  C6 0F        dec    $0F
+0B4F  A5 01        lda    $01
+0B51  F0 45        beq    $0B98
+0B53  B2 24        lda    ($24)
+0B55  A0 02        ldy    #$02
+0B57  00           brk
+0B58  D1 24        cmp    ($24),y
+0B5A  B0 1E        bcs    $0B7A
+0B5C  B2 24        lda    ($24)
+0B5E  85 01        sta    $01
+0B60  B2 24        lda    ($24)
+0B62  1A           inc    a
+0B63  92 24        sta    ($24)
+0B65  A5 1A        lda    $1A
+0B67  85 05        sta    $05
+0B69  E6 1A        inc    $1A
+0B6B  E2 20        sep    #$20      ; Note: m=1, x=0
+0B6D  B2 05        lda    ($05)
+0B6F  92 01        sta    ($01)
+0B71  C2 20        rep    #$20      ; Note: m=0, x=1
+0B73  B2 05        lda    ($05)
+0B75  29 FF 00     and    #$00FF    ; Note: 16-bit instruction
+0B78  80 11        bra    $0B8B
+0B7A  A5 1A        lda    $1A
+0B7C  85 01        sta    $01
+0B7E  E6 1A        inc    $1A
+0B80  B2 01        lda    ($01)
+0B82  29 FF 00     and    #$00FF    ; Note: 16-bit instruction
+0B85  48           pha
+0B86  D4 24        pei    ($24)
+0B88  20 00 00     jsr    $0000
+0B8B  85 01        sta    $01
+0B8D  C9 FF FF     cmp    #$FFFF    ; Note: 16-bit instruction
+0B90  D0 B7        bne    $0B49
+0B92  A9 FF FF     lda    #$FFFF    ; Note: 16-bit instruction
+0B95  82 BA F9     brl    $0552
+0B98  A5 0D        lda    $0D
+0B9A  29 01 00     and    #$0001    ; Note: 16-bit instruction
+0B9D  D0 03        bne    $0BA2
+0B9F  82 9B F9     brl    $053D
+0BA2  A5 16        lda    $16
+0BA4  85 0F        sta    $0F
+0BA6  80 11        bra    $0BB9
+0BA8  F4 20 00     pea    $0020
+0BAB  D4 24        pei    ($24)
+0BAD  20 00 00     jsr    $0000
+0BB0  85 01        sta    $01
+0BB2  C9 FF FF     cmp    #$FFFF    ; Note: 16-bit instruction
+0BB5  F0 DB        beq    $0B92
+0BB7  E6 12        inc    $12
+0BB9  A5 18        lda    $18
+0BBB  85 01        sta    $01
+0BBD  C6 18        dec    $18
+0BBF  38           sec
+0BC0  A5 0F        lda    $0F
+0BC2  E5 01        sbc    $01
+0BC4  70 03        bvs    $0BC9
+0BC6  49 00 80     eor    #$8000    ; Note: 16-bit instruction
+0BC9  10 03        bpl    $0BCE
+0BCB  82 6F F9     brl    $053D
+0BCE  B2 24        lda    ($24)
+0BD0  A0 02        ldy    #$02
+0BD2  00           brk
+0BD3  D1 24        cmp    ($24),y
+0BD5  B0 D1        bcs    $0BA8
+0BD7  B2 24        lda    ($24)
+0BD9  85 01        sta    $01
+0BDB  B2 24        lda    ($24)
+0BDD  1A           inc    a
+0BDE  92 24        sta    ($24)
+0BE0  E2 20        sep    #$20      ; Note: m=1, x=0
+0BE2  A9 20        lda    #$20
+0BE4  92 01        sta    ($01)
+0BE6  C2 20        rep    #$20      ; Note: m=0, x=1
+0BE8  A9 20 00     lda    #$0020    ; Note: 16-bit instruction
+0BEB  29 FF 00     and    #$00FF    ; Note: 16-bit instruction
+0BEE  80 C0        bra    $0BB0
+0BF0  3B           tsc
+0BF1  38           sec
+0BF2  E9 17 00     sbc    #$0017    ; Note: 16-bit instruction
+0BF5  1B           tcs
+0BF6  0B           phd
+0BF7  5B           tcd
+0BF8  64 09        stz    $09
+0BFA  A5 1A        lda    $1A
+0BFC  F0 07        beq    $0C05
+0BFE  A0 06        ldy    #$06
+0C00  00           brk
+0C01  B1 1A        lda    ($1A),y
+0C03  D0 11        bne    $0C16
+0C05  A9 FF FF     lda    #$FFFF    ; Note: 16-bit instruction
+0C08  A8           tay
+0C09  A5 18        lda    $18
+0C0B  85 1A        sta    $1A
+0C0D  2B           pld
+0C0E  3B           tsc
+0C0F  18           clc
+0C10  69 19 00     adc    #$0019    ; Note: 16-bit instruction
+0C13  1B           tcs
+0C14  98           tya
+0C15  60           rts
+0C16  A0 06        ldy    #$06
+0C18  00           brk
+0C19  B1 1A        lda    ($1A),y
+0C1B  29 00 02     and    #$0200    ; Note: 16-bit instruction
+0C1E  D0 09        bne    $0C29
+0C20  D4 1A        pei    ($1A)
+0C22  20 00 00     jsr    $0000
+0C25  85 01        sta    $01
+0C27  04 09        tsb    $09
+0C29  A0 08        ldy    #$08
+0C2B  00           brk
+0C2C  B1 1A        lda    ($1A),y
+0C2E  29 FF 00     and    #$00FF    ; Note: 16-bit instruction
+0C31  48           pha
+0C32  20 00 00     jsr    $0000
+0C35  85 01        sta    $01
+0C37  04 09        tsb    $09
+0C39  A0 06        ldy    #$06
+0C3B  00           brk
+0C3C  B1 1A        lda    ($1A),y
+0C3E  29 01 00     and    #$0001    ; Note: 16-bit instruction
+0C41  F0 08        beq    $0C4B
+0C43  88           dey
+0C44  88           dey
+0C45  B1 1A        lda    ($1A),y
+0C47  48           pha
+0C48  20 00 00     jsr    $0000
+0C4B  A0 0C        ldy    #$0C
+0C4D  00           brk
+0C4E  B1 1A        lda    ($1A),y
+0C50  F0 59        beq    $0CAB
+0C52  F4 00 00     pea    $0000
+0C55  18           clc
+0C56  7B           tdc
+0C57  69 0F 00     adc    #$000F    ; Note: 16-bit instruction
+0C5A  48           pha
+0C5B  20 00 00     jsr    $0000
+0C5E  A0 0C        ldy    #$0C
+0C60  00           brk
+0C61  B1 1A        lda    ($1A),y
+0C63  85 0B        sta    $0B
+0C65  64 0D        stz    $0D
+0C67  38           sec
+0C68  A9 07 00     lda    #$0007    ; Note: 16-bit instruction
+0C6B  E5 0D        sbc    $0D
+0C6D  85 01        sta    $01
+0C6F  A5 0B        lda    $0B
+0C71  A2 0A        ldx    #$0A
+0C73  00           brk
+0C74  20 00 00     jsr    $0000
+0C77  85 05        sta    $05
+0C79  18           clc
+0C7A  69 30 00     adc    #$0030    ; Note: 16-bit instruction
+0C7D  E2 20        sep    #$20      ; Note: m=1, x=0
+0C7F  A6 01        ldx    $01
+0C81  95 0F        sta    $0F,x
+0C83  C2 20        rep    #$20      ; Note: m=0, x=1
+0C85  A5 0B        lda    $0B
+0C87  A2 0A        ldx    #$0A
+0C89  00           brk
+0C8A  20 00 00     jsr    $0000
+0C8D  85 0B        sta    $0B
+0C8F  E6 0D        inc    $0D
+0C91  A5 0D        lda    $0D
+0C93  30 D2        bmi    $0C67
+0C95  3A           dec    a
+0C96  3A           dec    a
+0C97  3A           dec    a
+0C98  3A           dec    a
+0C99  3A           dec    a
+0C9A  30 CB        bmi    $0C67
+0C9C  E2 20        sep    #$20      ; Note: m=1, x=0
+0C9E  64 17        stz    $17
+0CA0  C2 20        rep    #$20      ; Note: m=0, x=1
+0CA2  18           clc
+0CA3  7B           tdc
+0CA4  69 0F 00     adc    #$000F    ; Note: 16-bit instruction
+0CA7  48           pha
+0CA8  20 00 00     jsr    $0000
+0CAB  A9 00 00     lda    #$0000    ; Note: 16-bit instruction
+0CAE  92 1A        sta    ($1A)
+0CB0  A0 02        ldy    #$02
+0CB2  00           brk
+0CB3  91 1A        sta    ($1A),y
+0CB5  C8           iny
+0CB6  C8           iny
+0CB7  91 1A        sta    ($1A),y
+0CB9  C8           iny
+0CBA  C8           iny
+0CBB  91 1A        sta    ($1A),y
+0CBD  A5 09        lda    $09
+0CBF  F0 03        beq    $0CC4
+0CC1  82 41 FF     brl    $0C05
+0CC4  A9 00 00     lda    #$0000    ; Note: 16-bit instruction
+0CC7  82 3E FF     brl    $0C08
+0CCA  3B           tsc
+0CCB  38           sec
+0CCC  E9 06 00     sbc    #$0006    ; Note: 16-bit instruction
+0CCF  1B           tcs
+0CD0  0B           phd
+0CD1  5B           tcd
+0CD2  A9 00 04     lda    #$0400    ; Note: 16-bit instruction
+0CD5  85 03        sta    $03
+0CD7  B2 0B        lda    ($0B)
+0CD9  29 FF 00     and    #$00FF    ; Note: 16-bit instruction
+0CDC  85 05        sta    $05
+0CDE  C9 72 00     cmp    #$0072    ; Note: 16-bit instruction
+0CE1  D0 24        bne    $0D07
+0CE3  A9 00 10     lda    #$1000    ; Note: 16-bit instruction
+0CE6  85 01        sta    $01
+0CE8  A9 00 02     lda    #$0200    ; Note: 16-bit instruction
+0CEB  85 03        sta    $03
+0CED  80 0A        bra    $0CF9
+0CEF  A9 01 13     lda    #$1301    ; Note: 16-bit instruction
+0CF2  80 03        bra    $0CF7
+0CF4  A9 01 19     lda    #$1901    ; Note: 16-bit instruction
+0CF7  85 01        sta    $01
+0CF9  E6 0B        inc    $0B
+0CFB  E2 20        sep    #$20      ; Note: m=1, x=0
+0CFD  B2 0B        lda    ($0B)
+0CFF  C9 2B        cmp    #$2B
+0D01  C2 20        rep    #$20      ; Note: m=0, x=1
+0D03  F0 21        beq    $0D26
+0D05  80 2C        bra    $0D33
+0D07  A5 05        lda    $05
+0D09  C9 77 00     cmp    #$0077    ; Note: 16-bit instruction
+0D0C  F0 E1        beq    $0CEF
+0D0E  A5 05        lda    $05
+0D10  C9 61 00     cmp    #$0061    ; Note: 16-bit instruction
+0D13  F0 DF        beq    $0CF4
+0D15  A9 00 00     lda    #$0000    ; Note: 16-bit instruction
+0D18  A8           tay
+0D19  A5 07        lda    $07
+0D1B  85 0F        sta    $0F
+0D1D  2B           pld
+0D1E  3B           tsc
+0D1F  18           clc
+0D20  69 0E 00     adc    #$000E    ; Note: 16-bit instruction
+0D23  1B           tcs
+0D24  98           tya
+0D25  60           rts
+0D26  E2 20        sep    #$20      ; Note: m=1, x=0
+0D28  A0 01 00     ldy    #$0001    ; Note: 16-bit instruction
+0D2B  B1 0B        lda    ($0B),y
+0D2D  C9 62        cmp    #'b'
+0D2F  C2 20        rep    #$20      ; Note: m=0, x=1
+0D31  F0 0C        beq    $0D3F
+0D33  E2 20        sep    #$20      ; Note: m=1, x=0
+0D35  B2 0B        lda    ($0B)
+0D37  C9 62        cmp    #'b'
+0D39  C2 20        rep    #$20      ; Note: m=0, x=1
+0D3B  D0 0C        bne    $0D49
+0D3D  E6 0B        inc    $0B
+0D3F  A9 10 00     lda    #$0010    ; Note: 16-bit instruction
+0D42  04 03        tsb    $03
+0D44  A9 00 10     lda    #$1000    ; Note: 16-bit instruction
+0D47  14 01        trb    $01
+0D49  E2 20        sep    #$20      ; Note: m=1, x=0
+0D4B  B2 0B        lda    ($0B)
+0D4D  C9 2B        cmp    #$2B
+0D4F  C2 20        rep    #$20      ; Note: m=0, x=1
+0D51  D0 14        bne    $0D67
+0D53  A5 01        lda    $01
+0D55  29 FE FF     and    #$FFFE    ; Note: 16-bit instruction
+0D58  09 02 00     ora    #$0002    ; Note: 16-bit instruction
+0D5B  85 01        sta    $01
+0D5D  A5 03        lda    $03
+0D5F  29 FF F9     and    #$F9FF    ; Note: 16-bit instruction
+0D62  09 00 08     ora    #$0800    ; Note: 16-bit instruction
+0D65  85 03        sta    $03
+0D67  A5 09        lda    $09
+0D69  F0 09        beq    $0D74
+0D6B  D4 01        pei    ($01)
+0D6D  D4 09        pei    ($09)
+0D6F  20 00 00     jsr    $0000
+0D72  85 0F        sta    $0F
+0D74  A5 0F        lda    $0F
+0D76  30 9D        bmi    $0D15
+0D78  38           sec
+0D79  A5 0F        lda    $0F
+0D7B  E9 14 00     sbc    #$0014    ; Note: 16-bit instruction
+0D7E  70 03        bvs    $0D83
+0D80  49 00 80     eor    #$8000    ; Note: 16-bit instruction
+0D83  30 90        bmi    $0D15
+0D85  E2 20        sep    #$20      ; Note: m=1, x=0
+0D87  A5 0F        lda    $0F
+0D89  A0 08 00     ldy    #$0008    ; Note: 16-bit instruction
+0D8C  91 0D        sta    ($0D),y
+0D8E  C2 20        rep    #$20      ; Note: m=0, x=1
+0D90  A5 03        lda    $03
+0D92  88           dey
+0D93  88           dey
+0D94  91 0D        sta    ($0D),y
+0D96  A5 0D        lda    $0D
+0D98  82 7D FF     brl    $0D18
+0D9B  3B           tsc
+0D9C  38           sec
+0D9D  E9 0E 00     sbc    #$000E    ; Note: 16-bit instruction
+0DA0  1B           tcs
+0DA1  0B           phd
+0DA2  5B           tcd
+0DA3  A5 11        lda    $11
+0DA5  F0 19        beq    $0DC0
+0DA7  A0 06        ldy    #$06
+0DA9  00           brk
+0DAA  B1 11        lda    ($11),y
+0DAC  85 0B        sta    $0B
+0DAE  A5 0B        lda    $0B
+0DB0  F0 0E        beq    $0DC0
+0DB2  A5 0B        lda    $0B
+0DB4  29 00 04     and    #$0400    ; Note: 16-bit instruction
+0DB7  D0 07        bne    $0DC0
+0DB9  A5 0B        lda    $0B
+0DBB  29 08 00     and    #$0008    ; Note: 16-bit instruction
+0DBE  F0 11        beq    $0DD1
+0DC0  A9 FF FF     lda    #$FFFF    ; Note: 16-bit instruction
+0DC3  A8           tay
+0DC4  A5 0F        lda    $0F
+0DC6  85 11        sta    $11
+0DC8  2B           pld
+0DC9  3B           tsc
+0DCA  18           clc
+0DCB  69 10 00     adc    #$0010    ; Note: 16-bit instruction
+0DCE  1B           tcs
+0DCF  98           tya
+0DD0  60           rts
+0DD1  B2 11        lda    ($11)
+0DD3  A0 02        ldy    #$02
+0DD5  00           brk
+0DD6  D1 11        cmp    ($11),y
+0DD8  B0 03        bcs    $0DDD
+0DDA  82 A2 00     brl    $0E7F
+0DDD  C8           iny
+0DDE  C8           iny
+0DDF  B1 11        lda    ($11),y
+0DE1  D0 05        bne    $0DE8
+0DE3  D4 11        pei    ($11)
+0DE5  20 00 00     jsr    $0000
+0DE8  A0 06        ldy    #$06
+0DEA  00           brk
+0DEB  B1 11        lda    ($11),y
+0DED  29 A0 00     and    #$00A0    ; Note: 16-bit instruction
+0DF0  F0 26        beq    $0E18
+0DF2  A9 00 00     lda    #$0000    ; Note: 16-bit instruction
+0DF5  85 0D        sta    $0D
+0DF7  A0 06        ldy    #$06
+0DF9  00           brk
+0DFA  B1 0D        lda    ($0D),y
+0DFC  29 20 40     and    #$4020    ; Note: 16-bit instruction
+0DFF  85 01        sta    $01
+0E01  C9 20 40     cmp    #$4020    ; Note: 16-bit instruction
+0E04  D0 05        bne    $0E0B
+0E06  D4 0D        pei    ($0D)
+0E08  20 00 00     jsr    $0000
+0E0B  A9 0E 00     lda    #$000E    ; Note: 16-bit instruction
+0E0E  18           clc
+0E0F  65 0D        adc    $0D
+0E11  85 0D        sta    $0D
+0E13  C9 00 00     cmp    #$0000    ; Note: 16-bit instruction
+0E16  90 DF        bcc    $0DF7
+0E18  A9 06 00     lda    #$0006    ; Note: 16-bit instruction
+0E1B  18           clc
+0E1C  65 11        adc    $11
+0E1E  85 01        sta    $01
+0E20  B2 01        lda    ($01)
+0E22  29 FF AF     and    #$AFFF    ; Note: 16-bit instruction
+0E25  92 01        sta    ($01)
+0E27  A0 0A        ldy    #$0A
+0E29  00           brk
+0E2A  B1 11        lda    ($11),y
+0E2C  48           pha
+0E2D  A0 04        ldy    #$04
+0E2F  00           brk
+0E30  B1 11        lda    ($11),y
+0E32  48           pha
+0E33  A0 08        ldy    #$08
+0E35  00           brk
+0E36  B1 11        lda    ($11),y
+0E38  29 FF 00     and    #$00FF    ; Note: 16-bit instruction
+0E3B  48           pha
+0E3C  20 00 00     jsr    $0000
+0E3F  85 09        sta    $09
+0E41  38           sec
+0E42  A9 00 00     lda    #$0000    ; Note: 16-bit instruction
+0E45  E5 09        sbc    $09
+0E47  70 03        bvs    $0E4C
+0E49  49 00 80     eor    #$8000    ; Note: 16-bit instruction
+0E4C  10 1F        bpl    $0E6D
+0E4E  A5 09        lda    $09
+0E50  D0 05        bne    $0E57
+0E52  A9 02 00     lda    #$0002    ; Note: 16-bit instruction
+0E55  80 03        bra    $0E5A
+0E57  A9 04 00     lda    #$0004    ; Note: 16-bit instruction
+0E5A  85 01        sta    $01
+0E5C  A9 06 00     lda    #$0006    ; Note: 16-bit instruction
+0E5F  18           clc
+0E60  65 11        adc    $11
+0E62  85 05        sta    $05
+0E64  B2 05        lda    ($05)
+0E66  05 01        ora    $01
+0E68  92 05        sta    ($05)
+0E6A  82 53 FF     brl    $0DC0
+0E6D  A0 04        ldy    #$04
+0E6F  00           brk
+0E70  B1 11        lda    ($11),y
+0E72  92 11        sta    ($11)
+0E74  B1 11        lda    ($11),y
+0E76  18           clc
+0E77  65 09        adc    $09
+0E79  85 01        sta    $01
+0E7B  88           dey
+0E7C  88           dey
+0E7D  91 11        sta    ($11),y
+0E7F  B2 11        lda    ($11)
+0E81  85 01        sta    $01
+0E83  B2 11        lda    ($11)
+0E85  1A           inc    a
+0E86  92 11        sta    ($11)
+0E88  B2 01        lda    ($01)
+0E8A  29 FF 00     and    #$00FF    ; Note: 16-bit instruction
+0E8D  82 33 FF     brl    $0DC3
+0E90  3B           tsc
+0E91  38           sec
+0E92  E9 09 00     sbc    #$0009    ; Note: 16-bit instruction
+0E95  1B           tcs
+0E96  0B           phd
+0E97  5B           tcd
+0E98  A5 0C        lda    $0C
+0E9A  D0 03        bne    $0E9F
+0E9C  82 CE 01     brl    $106D
+0E9F  A0 06        ldy    #$06
+0EA1  00           brk
+0EA2  B1 0C        lda    ($0C),y
+0EA4  85 05        sta    $05
+0EA6  A5 05        lda    $05
+0EA8  D0 03        bne    $0EAD
+0EAA  82 C0 01     brl    $106D
+0EAD  A5 05        lda    $05
+0EAF  29 00 02     and    #$0200    ; Note: 16-bit instruction
+0EB2  F0 03        beq    $0EB7
+0EB4  82 B6 01     brl    $106D
+0EB7  A5 05        lda    $05
+0EB9  29 08 00     and    #$0008    ; Note: 16-bit instruction
+0EBC  F0 03        beq    $0EC1
+0EBE  82 AC 01     brl    $106D
+0EC1  98           tya
+0EC2  18           clc
+0EC3  65 0C        adc    $0C
+0EC5  85 01        sta    $01
+0EC7  B2 01        lda    ($01)
+0EC9  29 FD EF     and    #$EFFD    ; Note: 16-bit instruction
+0ECC  92 01        sta    ($01)
+0ECE  88           dey
+0ECF  88           dey
+0ED0  B1 0C        lda    ($0C),y
+0ED2  D0 24        bne    $0EF8
+0ED4  A5 0E        lda    $0E
+0ED6  C9 FF FF     cmp    #$FFFF    ; Note: 16-bit instruction
+0ED9  D0 11        bne    $0EEC
+0EDB  A9 00 00     lda    #$0000    ; Note: 16-bit instruction
+0EDE  A8           tay
+0EDF  A5 0A        lda    $0A
+0EE1  85 0E        sta    $0E
+0EE3  2B           pld
+0EE4  3B           tsc
+0EE5  18           clc
+0EE6  69 0D 00     adc    #$000D    ; Note: 16-bit instruction
+0EE9  1B           tcs
+0EEA  98           tya
+0EEB  60           rts
+0EEC  D4 0C        pei    ($0C)
+0EEE  20 00 00     jsr    $0000
+0EF1  A0 06        ldy    #$06
+0EF3  00           brk
+0EF4  B1 0C        lda    ($0C),y
+0EF6  85 05        sta    $05
+0EF8  A5 05        lda    $05
+0EFA  29 00 40     and    #$4000    ; Note: 16-bit instruction
+0EFD  D0 44        bne    $0F43
+0EFF  A0 04        ldy    #$04
+0F01  00           brk
+0F02  B1 0C        lda    ($0C),y
+0F04  D2 0C        cmp    ($0C)
+0F06  B0 27        bcs    $0F2F
+0F08  F4 01 00     pea    $0001
+0F0B  38           sec
+0F0C  B2 0C        lda    ($0C)
+0F0E  88           dey
+0F0F  88           dey
+0F10  F1 0C        sbc    ($0C),y
+0F12  85 01        sta    $01
+0F14  88           dey
+0F15  88           dey
+0F16  A5 01        lda    $01
+0F18  10 01        bpl    $0F1B
+0F1A  88           dey
+0F1B  85 01        sta    $01
+0F1D  84 03        sty    $03
+0F1F  D4 03        pei    ($03)
+0F21  D4 01        pei    ($01)
+0F23  A0 08        ldy    #$08
+0F25  00           brk
+0F26  B1 0C        lda    ($0C),y
+0F28  29 FF 00     and    #$00FF    ; Note: 16-bit instruction
+0F2B  48           pha
+0F2C  20 00 00     jsr    $0000
+0F2F  A0 04        ldy    #$04
+0F31  00           brk
+0F32  B1 0C        lda    ($0C),y
+0F34  92 0C        sta    ($0C)
+0F36  18           clc
+0F37  A0 0A        ldy    #$0A
+0F39  00           brk
+0F3A  71 0C        adc    ($0C),y
+0F3C  85 01        sta    $01
+0F3E  A0 02        ldy    #$02
+0F40  00           brk
+0F41  91 0C        sta    ($0C),y
+0F43  A5 0E        lda    $0E
+0F45  C9 FF FF     cmp    #$FFFF    ; Note: 16-bit instruction
+0F48  D0 08        bne    $0F52
+0F4A  E2 20        sep    #$20      ; Note: m=1, x=0
+0F4C  64 09        stz    $09
+0F4E  C2 20        rep    #$20      ; Note: m=0, x=1
+0F50  80 08        bra    $0F5A
+0F52  E2 20        sep    #$20      ; Note: m=1, x=0
+0F54  A5 0E        lda    $0E
+0F56  85 09        sta    $09
+0F58  C2 20        rep    #$20      ; Note: m=0, x=1
+0F5A  38           sec
+0F5B  B2 0C        lda    ($0C)
+0F5D  A0 04        ldy    #$04
+0F5F  00           brk
+0F60  F1 0C        sbc    ($0C),y
+0F62  85 07        sta    $07
+0F64  A5 05        lda    $05
+0F66  29 A0 00     and    #$00A0    ; Note: 16-bit instruction
+0F69  F0 50        beq    $0FBB
+0F6B  A5 0E        lda    $0E
+0F6D  C9 FF FF     cmp    #$FFFF    ; Note: 16-bit instruction
+0F70  F0 2A        beq    $0F9C
+0F72  B2 0C        lda    ($0C)
+0F74  85 01        sta    $01
+0F76  E2 20        sep    #$20      ; Note: m=1, x=0
+0F78  A5 09        lda    $09
+0F7A  92 01        sta    ($01)
+0F7C  C2 20        rep    #$20      ; Note: m=0, x=1
+0F7E  B2 0C        lda    ($0C)
+0F80  1A           inc    a
+0F81  92 0C        sta    ($0C)
+0F83  A9 06 00     lda    #$0006    ; Note: 16-bit instruction
+0F86  18           clc
+0F87  65 0C        adc    $0C
+0F89  85 01        sta    $01
+0F8B  B2 01        lda    ($01)
+0F8D  09 00 40     ora    #$4000    ; Note: 16-bit instruction
+0F90  92 01        sta    ($01)
+0F92  85 05        sta    $05
+0F94  A9 00 00     lda    #$0000    ; Note: 16-bit instruction
+0F97  8D 00 00     sta    $0000
+0F9A  E6 07        inc    $07
+0F9C  A5 0E        lda    $0E
+0F9E  C9 FF FF     cmp    #$FFFF    ; Note: 16-bit instruction
+0FA1  F0 13        beq    $0FB6
+0FA3  E2 20        sep    #$20      ; Note: m=1, x=0
+0FA5  A5 09        lda    $09
+0FA7  C9 0A        cmp    #$0A
+0FA9  C2 20        rep    #$20      ; Note: m=0, x=1
+0FAB  F0 09        beq    $0FB6
+0FAD  A5 07        lda    $07
+0FAF  A0 0A        ldy    #$0A
+0FB1  00           brk
+0FB2  D1 0C        cmp    ($0C),y
+0FB4  90 0E        bcc    $0FC4
+0FB6  A9 FF FF     lda    #$FFFF    ; Note: 16-bit instruction
+0FB9  85 0E        sta    $0E
+0FBB  A5 05        lda    $05
+0FBD  29 00 40     and    #$4000    ; Note: 16-bit instruction
+0FC0  D0 11        bne    $0FD3
+0FC2  80 3C        bra    $1000
+0FC4  B2 0C        lda    ($0C)
+0FC6  A0 02        ldy    #$02
+0FC8  00           brk
+0FC9  91 0C        sta    ($0C),y
+0FCB  A5 09        lda    $09
+0FCD  29 FF 00     and    #$00FF    ; Note: 16-bit instruction
+0FD0  82 0B FF     brl    $0EDE
+0FD3  A5 07        lda    $07
+0FD5  F0 1A        beq    $0FF1
+0FD7  D4 07        pei    ($07)
+0FD9  A0 04        ldy    #$04
+0FDB  00           brk
+0FDC  B1 0C        lda    ($0C),y
+0FDE  48           pha
+0FDF  A0 08        ldy    #$08
+0FE1  00           brk
+0FE2  B1 0C        lda    ($0C),y
+0FE4  29 FF 00     and    #$00FF    ; Note: 16-bit instruction
+0FE7  48           pha
+0FE8  20 00 00     jsr    $0000
+0FEB  85 01        sta    $01
+0FED  C5 07        cmp    $07
+0FEF  D0 5E        bne    $104F
+0FF1  A9 06 00     lda    #$0006    ; Note: 16-bit instruction
+0FF4  18           clc
+0FF5  65 0C        adc    $0C
+0FF7  85 01        sta    $01
+0FF9  B2 01        lda    ($01)
+0FFB  29 FF BF     and    #$BFFF    ; Note: 16-bit instruction
+0FFE  92 01        sta    ($01)
+1000  A5 0E        lda    $0E
+1002  C9 FF FF     cmp    #$FFFF    ; Note: 16-bit instruction
+1005  D0 0B        bne    $1012
+1007  A0 04        ldy    #$04
+1009  00           brk
+100A  B1 0C        lda    ($0C),y
+100C  92 0C        sta    ($0C)
+100E  B1 0C        lda    ($0C),y
+1010  80 B4        bra    $0FC6
+1012  A9 00 00     lda    #$0000    ; Note: 16-bit instruction
+1015  8D 00 00     sta    $0000
+1018  A9 06 00     lda    #$0006    ; Note: 16-bit instruction
+101B  18           clc
+101C  65 0C        adc    $0C
+101E  85 01        sta    $01
+1020  B2 01        lda    ($01)
+1022  09 00 40     ora    #$4000    ; Note: 16-bit instruction
+1025  92 01        sta    ($01)
+1027  A0 04        ldy    #$04
+1029  00           brk
+102A  B1 0C        lda    ($0C),y
+102C  92 0C        sta    ($0C)
+102E  18           clc
+102F  A0 0A        ldy    #$0A
+1031  00           brk
+1032  71 0C        adc    ($0C),y
+1034  85 01        sta    $01
+1036  A0 02        ldy    #$02
+1038  00           brk
+1039  91 0C        sta    ($0C),y
+103B  B2 0C        lda    ($0C)
+103D  85 01        sta    $01
+103F  B2 0C        lda    ($0C)
+1041  1A           inc    a
+1042  92 0C        sta    ($0C)
+1044  E2 20        sep    #$20      ; Note: m=1, x=0
+1046  A5 09        lda    $09
+1048  92 01        sta    ($01)
+104A  C2 20        rep    #$20      ; Note: m=0, x=1
+104C  82 7C FF     brl    $0FCB
+104F  A9 06 00     lda    #$0006    ; Note: 16-bit instruction
+1052  18           clc
+1053  65 0C        adc    $0C
+1055  85 01        sta    $01
+1057  B2 01        lda    ($01)
+1059  09 04 00     ora    #$0004    ; Note: 16-bit instruction
+105C  92 01        sta    ($01)
+105E  A0 04        ldy    #$04
+1060  00           brk
+1061  B1 0C        lda    ($0C),y
+1063  88           dey
+1064  88           dey
+1065  91 0C        sta    ($0C),y
+1067  C8           iny
+1068  C8           iny
+1069  B1 0C        lda    ($0C),y
+106B  92 0C        sta    ($0C)
+106D  A9 FF FF     lda    #$FFFF    ; Note: 16-bit instruction
+1070  82 6B FE     brl    $0EDE
+1073  8B           phb
+1074  4B           phk
+1075  AB           plb
+1076  48           pha
+1077  3B           tsc
+1078  0B           phd
+1079  5B           tcd
+107A  A0 01        ldy    #$01
+107C  00           brk
+107D  B1 04        lda    ($04),y
+107F  AA           tax
+1080  CA           dex
+1081  30 0C        bmi    $108F
+1083  C8           iny
+1084  C8           iny
+1085  B1 04        lda    ($04),y
+1087  C5 01        cmp    $01
+1089  F0 04        beq    $108F
+108B  C8           iny
+108C  C8           iny
+108D  80 F1        bra    $1080
+108F  C8           iny
+1090  C8           iny
+1091  B1 04        lda    ($04),y
+1093  85 04        sta    $04
+1095  2B           pld
+1096  68           pla
+1097  AB           plb
+1098  60           rts
+1099  3B           tsc
+109A  0B           phd
+109B  5B           tcd
+109C  A0 00        ldy    #$00
+109E  00           brk
+109F  E2 20        sep    #$20      ; Note: m=1, x=0
+10A1  B1 03        lda    ($03),y
+10A3  F0 03        beq    $10A8
+10A5  C8           iny
+10A6  80 F9        bra    $10A1
+10A8  C2 20        rep    #$20      ; Note: m=0, x=1
+10AA  A6 01        ldx    $01
+10AC  86 03        stx    $03
+10AE  2B           pld
+10AF  FA           plx
+10B0  98           tya
+10B1  60           rts
+10B2  08           php
+10B3  20 00 00     jsr    $0000
+10B6  28           plp
+10B7  A8           tay
+10B8  A3 01        lda    $01,s
+10BA  83 09        sta    $09,s
+10BC  98           tya
+10BD  7A           ply
+10BE  7A           ply
+10BF  7A           ply
+10C0  7A           ply
+10C1  60           rts
+10C2  08           php
+10C3  20 00 00     jsr    $0000
+10C6  28           plp
+10C7  A3 05        lda    $05,s
+10C9  AA           tax
+10CA  A3 03        lda    $03,s
+10CC  A8           tay
+10CD  A3 01        lda    $01,s
+10CF  83 09        sta    $09,s
+10D1  98           tya
+10D2  7A           ply
+10D3  7A           ply
+10D4  7A           ply
+10D5  7A           ply
+10D6  60           rts
+10D7  3B           tsc
+10D8  38           sec
+10D9  E9 04 00     sbc    #$0004    ; Note: 16-bit instruction
+10DC  1B           tcs
+10DD  0B           phd
+10DE  5B           tcd
+10DF  A5 07        lda    $07
+10E1  D0 45        bne    $1128
+10E3  A9 00 00     lda    #$0000    ; Note: 16-bit instruction
+10E6  85 07        sta    $07
+10E8  A0 06        ldy    #$06
+10EA  00           brk
+10EB  B1 07        lda    ($07),y
+10ED  F0 27        beq    $1116
+10EF  B1 07        lda    ($07),y
+10F1  29 08 02     and    #$0208    ; Note: 16-bit instruction
+10F4  D0 20        bne    $1116
+10F6  F4 FF FF     pea    $FFFF
+10F9  D4 07        pei    ($07)
+10FB  20 00 00     jsr    $0000
+10FE  85 01        sta    $01
+1100  C9 FF FF     cmp    #$FFFF    ; Note: 16-bit instruction
+1103  D0 11        bne    $1116
+1105  A9 FF FF     lda    #$FFFF    ; Note: 16-bit instruction
+1108  A8           tay
+1109  A5 05        lda    $05
+110B  85 07        sta    $07
+110D  2B           pld
+110E  3B           tsc
+110F  18           clc
+1110  69 06 00     adc    #$0006    ; Note: 16-bit instruction
+1113  1B           tcs
+1114  98           tya
+1115  60           rts
+1116  A9 0E 00     lda    #$000E    ; Note: 16-bit instruction
+1119  18           clc
+111A  65 07        adc    $07
+111C  85 07        sta    $07
+111E  C9 00 00     cmp    #$0000    ; Note: 16-bit instruction
+1121  90 C5        bcc    $10E8
+1123  A9 00 00     lda    #$0000    ; Note: 16-bit instruction
+1126  80 E0        bra    $1108
+1128  F4 FF FF     pea    $FFFF
+112B  D4 07        pei    ($07)
+112D  20 00 00     jsr    $0000
+1130  80 D6        bra    $1108
+1132  3B           tsc
+1133  38           sec
+1134  E9 0A 00     sbc    #$000A    ; Note: 16-bit instruction
+1137  1B           tcs
+1138  0B           phd
+1139  5B           tcd
+113A  AD 00 00     lda    $0000
+113D  D0 09        bne    $1148
+113F  F4 00 00     pea    $0000
+1142  20 00 00     jsr    $0000
+1145  8D 00 00     sta    $0000
+1148  F4 00 00     pea    $0000
+114B  20 00 00     jsr    $0000
+114E  85 09        sta    $09
+1150  64 07        stz    $07
+1152  AD 00 00     lda    $0000
+1155  80 0E        bra    $1165
+1157  A5 05        lda    $05
+1159  85 07        sta    $07
+115B  B2 05        lda    ($05)
+115D  29 FE FF     and    #$FFFE    ; Note: 16-bit instruction
+1160  85 01        sta    $01
+1162  18           clc
+1163  65 05        adc    $05
+1165  85 05        sta    $05
+1167  C5 09        cmp    $09
+1169  B0 4F        bcs    $11BA
+116B  B2 05        lda    ($05)
+116D  29 01 00     and    #$0001    ; Note: 16-bit instruction
+1170  D0 E5        bne    $1157
+1172  A9 02 00     lda    #$0002    ; Note: 16-bit instruction
+1175  18           clc
+1176  65 05        adc    $05
+1178  85 01        sta    $01
+117A  A5 0D        lda    $0D
+117C  C5 01        cmp    $01
+117E  D0 D7        bne    $1157
+1180  A5 07        lda    $07
+1182  F0 12        beq    $1196
+1184  B2 07        lda    ($07)
+1186  29 01 00     and    #$0001    ; Note: 16-bit instruction
+1189  F0 0B        beq    $1196
+118B  B2 07        lda    ($07)
+118D  18           clc
+118E  72 05        adc    ($05)
+1190  92 07        sta    ($07)
+1192  A5 07        lda    $07
+1194  85 05        sta    $05
+1196  B2 05        lda    ($05)
+1198  09 01 00     ora    #$0001    ; Note: 16-bit instruction
+119B  92 05        sta    ($05)
+119D  29 FE FF     and    #$FFFE    ; Note: 16-bit instruction
+11A0  85 01        sta    $01
+11A2  18           clc
+11A3  65 05        adc    $05
+11A5  85 07        sta    $07
+11A7  B2 07        lda    ($07)
+11A9  29 01 00     and    #$0001    ; Note: 16-bit instruction
+11AC  F0 0C        beq    $11BA
+11AE  B2 07        lda    ($07)
+11B0  29 FE FF     and    #$FFFE    ; Note: 16-bit instruction
+11B3  85 01        sta    $01
+11B5  18           clc
+11B6  72 05        adc    ($05)
+11B8  92 05        sta    ($05)
+11BA  A5 0B        lda    $0B
+11BC  85 0D        sta    $0D
+11BE  2B           pld
+11BF  3B           tsc
+11C0  18           clc
+11C1  69 0C 00     adc    #$000C    ; Note: 16-bit instruction
+11C4  1B           tcs
+11C5  60           rts
+11C6  3B           tsc
+11C7  0B           phd
+11C8  5B           tcd
+11C9  A0 00        ldy    #$00
+11CB  00           brk
+11CC  E2 20        sep    #$20      ; Note: m=1, x=0
+11CE  B1 05        lda    ($05),y
+11D0  91 03        sta    ($03),y
+11D2  F0 03        beq    $11D7
+11D4  C8           iny
+11D5  80 F7        bra    $11CE
+11D7  C2 20        rep    #$20      ; Note: m=0, x=1
+11D9  A5 03        lda    $03
+11DB  A6 01        ldx    $01
+11DD  86 05        stx    $05
+11DF  2B           pld
+11E0  FA           plx
+11E1  FA           plx
+11E2  60           rts
+11E3  20 00 00     jsr    $0000
+11E6  8A           txa
+11E7  60           rts
+11E8  48           pha
+11E9  DA           phx
+11EA  3B           tsc
+11EB  0B           phd
+11EC  5B           tcd
+11ED  A5 03        lda    $03
+11EF  05 01        ora    $01
+11F1  29 00 FF     and    #$FF00    ; Note: 16-bit instruction
+11F4  D0 0A        bne    $1200
+11F6  A2 08        ldx    #$08
+11F8  00           brk
+11F9  A5 03        lda    $03
+11FB  EB           xba
+11FC  85 03        sta    $03
+11FE  80 03        bra    $1203
+1200  A2 10        ldx    #$10
+1202  00           brk
+1203  A9 00 00     lda    #$0000    ; Note: 16-bit instruction
+1206  06 03        asl    $03
+1208  2A           rol    a
+1209  38           sec
+120A  E5 01        sbc    $01
+120C  90 04        bcc    $1212
+120E  E6 03        inc    $03
+1210  80 02        bra    $1214
+1212  65 01        adc    $01
+1214  CA           dex
+1215  D0 EF        bne    $1206
+1217  AA           tax
+1218  2B           pld
+1219  7A           ply
+121A  68           pla
+121B  60           rts
+121C  3B           tsc
+121D  38           sec
+121E  E9 06 00     sbc    #$0006    ; Note: 16-bit instruction
+1221  1B           tcs
+1222  0B           phd
+1223  5B           tcd
+1224  A9 41 00     lda    #$0041    ; Note: 16-bit instruction
+1227  85 05        sta    $05
+1229  A0 08        ldy    #$08
+122B  00           brk
+122C  B1 09        lda    ($09),y
+122E  29 FF 00     and    #$00FF    ; Note: 16-bit instruction
+1231  48           pha
+1232  20 00 00     jsr    $0000
+1235  AA           tax
+1236  F0 1D        beq    $1255
+1238  A9 21 00     lda    #$0021    ; Note: 16-bit instruction
+123B  85 05        sta    $05
+123D  A9 00 04     lda    #$0400    ; Note: 16-bit instruction
+1240  A0 0A        ldy    #$0A
+1242  00           brk
+1243  91 09        sta    ($09),y
+1245  F4 00 04     pea    $0400
+1248  20 00 00     jsr    $0000
+124B  A0 04        ldy    #$04
+124D  00           brk
+124E  91 09        sta    ($09),y
+1250  AA           tax
+1251  F0 09        beq    $125C
+1253  80 21        bra    $1276
+1255  A5 09        lda    $09
+1257  C9 00 00     cmp    #$0000    ; Note: 16-bit instruction
+125A  D0 E1        bne    $123D
+125C  A9 01 00     lda    #$0001    ; Note: 16-bit instruction
+125F  A0 0A        ldy    #$0A
+1261  00           brk
+1262  91 09        sta    ($09),y
+1264  A9 09 00     lda    #$0009    ; Note: 16-bit instruction
+1267  18           clc
+1268  65 09        adc    $09
+126A  85 01        sta    $01
+126C  A0 04        ldy    #$04
+126E  00           brk
+126F  91 09        sta    ($09),y
+1271  A9 80 00     lda    #$0080    ; Note: 16-bit instruction
+1274  85 05        sta    $05
+1276  A9 06 00     lda    #$0006    ; Note: 16-bit instruction
+1279  18           clc
+127A  65 09        adc    $09
+127C  85 01        sta    $01
+127E  A5 05        lda    $05
+1280  12 01        ora    ($01)
+1282  92 01        sta    ($01)
+1284  A0 04        ldy    #$04
+1286  00           brk
+1287  B1 09        lda    ($09),y
+1289  88           dey
+128A  88           dey
+128B  91 09        sta    ($09),y
+128D  C8           iny
+128E  C8           iny
+128F  B1 09        lda    ($09),y
+1291  92 09        sta    ($09)
+1293  A5 07        lda    $07
+1295  85 09        sta    $09
+1297  2B           pld
+1298  3B           tsc
+1299  18           clc
+129A  69 08 00     adc    #$0008    ; Note: 16-bit instruction
+129D  1B           tcs
+129E  60           rts
+129F  F4 00 00     pea    $0000
+12A2  F4 00 00     pea    $0000
+12A5  3B           tsc
+12A6  0B           phd
+12A7  5B           tcd
+12A8  A5 0C        lda    $0C
+12AA  05 10        ora    $10
+12AC  D0 0D        bne    $12BB
+12AE  A5 0A        lda    $0A
+12B0  A6 0E        ldx    $0E
+12B2  20 00 00     jsr    $0000
+12B5  85 0A        sta    $0A
+12B7  86 01        stx    $01
+12B9  80 20        bra    $12DB
+12BB  A2 20        ldx    #$20
+12BD  00           brk
+12BE  06 0A        asl    $0A
+12C0  26 0C        rol    $0C
+12C2  26 01        rol    $01
+12C4  26 03        rol    $03
+12C6  38           sec
+12C7  A5 01        lda    $01
+12C9  E5 0E        sbc    $0E
+12CB  A8           tay
+12CC  A5 03        lda    $03
+12CE  E5 10        sbc    $10
+12D0  90 06        bcc    $12D8
+12D2  85 03        sta    $03
+12D4  84 01        sty    $01
+12D6  E6 0A        inc    $0A
+12D8  CA           dex
+12D9  D0 E3        bne    $12BE
+12DB  2B           pld
+12DC  68           pla
+12DD  FA           plx
+12DE  60           rts
+12DF  AD 00 00     lda    $0000
+12E2  D0 06        bne    $12EA
+12E4  AD 00 00     lda    $0000
+12E7  8D 00 00     sta    $0000
+12EA  38           sec
+12EB  AD 00 00     lda    $0000
+12EE  ED 00 00     sbc    $0000
+12F1  C3 03        cmp    $03,s
+12F3  B0 05        bcs    $12FA
+12F5  A2 FF        ldx    #$FF
+12F7  FF 80 0A AD  sbc    $AD0A80,x
+12FB  00           brk
+12FC  00           brk
+12FD  AA           tax
+12FE  18           clc
+12FF  63 03        adc    $03,s
+1301  8D 00 00     sta    $0000
+1304  A3 01        lda    $01,s
+1306  83 03        sta    $03,s
+1308  68           pla
+1309  8A           txa
+130A  60           rts
+130B  3B           tsc
+130C  38           sec
+130D  E9 0C 00     sbc    #$000C    ; Note: 16-bit instruction
+1310  1B           tcs
+1311  0B           phd
+1312  5B           tcd
+1313  AD 00 00     lda    $0000
+1316  D0 09        bne    $1321
+1318  F4 00 00     pea    $0000
+131B  20 00 00     jsr    $0000
+131E  8D 00 00     sta    $0000
+1321  F4 00 00     pea    $0000
+1324  20 00 00     jsr    $0000
+1327  85 09        sta    $09
+1329  A5 0F        lda    $0F
+132B  D0 11        bne    $133E
+132D  A9 00 00     lda    #$0000    ; Note: 16-bit instruction
+1330  A8           tay
+1331  A5 0D        lda    $0D
+1333  85 0F        sta    $0F
+1335  2B           pld
+1336  3B           tsc
+1337  18           clc
+1338  69 0E 00     adc    #$000E    ; Note: 16-bit instruction
+133B  1B           tcs
+133C  98           tya
+133D  60           rts
+133E  A5 0F        lda    $0F
+1340  29 01 00     and    #$0001    ; Note: 16-bit instruction
+1343  F0 02        beq    $1347
+1345  E6 0F        inc    $0F
+1347  E6 0F        inc    $0F
+1349  E6 0F        inc    $0F
+134B  AD 00 00     lda    $0000
+134E  80 4D        bra    $139D
+1350  B2 05        lda    ($05)
+1352  85 0B        sta    $0B
+1354  29 01 00     and    #$0001    ; Note: 16-bit instruction
+1357  F0 3A        beq    $1393
+1359  A9 01 00     lda    #$0001    ; Note: 16-bit instruction
+135C  14 0B        trb    $0B
+135E  A5 0B        lda    $0B
+1360  C5 0F        cmp    $0F
+1362  90 2F        bcc    $1393
+1364  38           sec
+1365  A5 0B        lda    $0B
+1367  E5 0F        sbc    $0F
+1369  85 01        sta    $01
+136B  C9 04 00     cmp    #$0004    ; Note: 16-bit instruction
+136E  90 15        bcc    $1385
+1370  A5 05        lda    $05
+1372  18           clc
+1373  65 0F        adc    $0F
+1375  85 07        sta    $07
+1377  38           sec
+1378  A5 0B        lda    $0B
+137A  E5 0F        sbc    $0F
+137C  85 01        sta    $01
+137E  1A           inc    a
+137F  92 07        sta    ($07)
+1381  A5 0F        lda    $0F
+1383  85 0B        sta    $0B
+1385  A5 0B        lda    $0B
+1387  92 05        sta    ($05)
+1389  A9 02 00     lda    #$0002    ; Note: 16-bit instruction
+138C  18           clc
+138D  65 05        adc    $05
+138F  85 01        sta    $01
+1391  80 9D        bra    $1330
+1393  B2 05        lda    ($05)
+1395  29 FE FF     and    #$FFFE    ; Note: 16-bit instruction
+1398  85 01        sta    $01
+139A  18           clc
+139B  65 05        adc    $05
+139D  85 05        sta    $05
+139F  C5 09        cmp    $09
+13A1  90 AD        bcc    $1350
+13A3  D4 0F        pei    ($0F)
+13A5  20 00 00     jsr    $0000
+13A8  85 05        sta    $05
+13AA  C9 FF FF     cmp    #$FFFF    ; Note: 16-bit instruction
+13AD  D0 03        bne    $13B2
+13AF  82 7B FF     brl    $132D
+13B2  A5 0F        lda    $0F
+13B4  80 D1        bra    $1387
+13B6  00           brk
+13B7  00           brk
+13B8  45 3A        eor    $3A
+13BA  00           brk
+13BB  00           brk
+13BC  00           brk
+13BD  72 77        adc    ($77)
+13BF  62 00 00     per    $0000
+13C2  A8           tay
+13C3  FF AF 6F 70  sbc    $706FAF,x
+13C7  65 6E        adc    $6E
+13C9  3A           dec    a
+13CA  20 25 73     jsr    $7325
+13CD  20 6D 6F     jsr    $6F6D
+13D0  64 65        stz    $65
+13D2  3A           dec    a
+13D3  25 64        and    $64
+13D5  20 66 64     jsr    $6466
+13D8  3A           dec    a
+13D9  25 30        and    $30
+13DB  34 58        bit    $58,x
+13DD  20 0A 00     jsr    $000A
+13E0  63 6C        adc    $6C,s
+13E2  6F 73 65 3A  adc    $3A6573
+13E6  20 25 64     jsr    $6425
+13E9  0A           asl    a
+13EA  00           brk
+13EB  69 73 61     adc    #$6173    ; Note: 16-bit instruction
+13EE  74 74        stz    $74,x
+13F0  79 20 25     adc    $2520,y
+13F3  64 0A        stz    $0A
+13F5  00           brk
+13F6  72 65        adc    ($65)
+13F8  61 64        adc    ($64,x)
+13FA  20 25 64     jsr    $6425
+13FD  20 25 30     jsr    $3025
+1400  34 58        bit    $58,x
+1402  20 25 64     jsr    $6425
+1405  0A           asl    a
+1406  00           brk
+1407  75 6E        adc    $6E,x
+1409  6C 69 6E     jmp    ($6E69)
+140C  6B           rtl
+140D  20 25 30     jsr    $3025
+1410  34 58        bit    $58,x
+1412  0A           asl    a
+1413  00           brk
+1414  77 72        adc    [$72],y
+1416  69 74 65     adc    #$6574    ; Note: 16-bit instruction
+1419  20 25 64     jsr    $6425
+141C  20 25 30     jsr    $3025
+141F  34 58        bit    $58,x
+1421  20 25 64     jsr    $6425
+1424  0A           asl    a
+1425  00           brk
+1426  6C 73 65     jmp    ($6573)
+1429  65 6B        adc    $6B
+142B  20 25 64     jsr    $6425
+142E  20 25 64     jsr    $6425
+1431  20 25 64     jsr    $6425
+1434  0A           asl    a
+1435  00           brk
+1436  66 64        ror    $64
+1438  73 3A        adc    ($3A,s),y
+143A  20 25 30     jsr    $3025
+143D  34 58        bit    $58,x
+143F  20 25 30     jsr    $3025
+1442  34 58        bit    $58,x
+1444  0A           asl    a
+1445  00           brk
+1446  44 3A 54     mvp    $54,$3A
+1449  45 53        eor    $53
+144B  54 38 31     mvn    $31,$38
+144E  36 2E        rol    $2E,x
+1450  45 58        eor    $58
+1452  45 00        eor    $00
+1454  72 62        adc    ($62)
+1456  00           brk
+1457  66 6F        ror    $6F
+1459  70 65        bvs    $14C0
+145B  6E 3A 20     ror    $203A
+145E  25 30        and    $30
+1460  34 58        bit    $58,x
+1462  0A           asl    a
+1463  00           brk
+1464  48           pha
+1465  61 6C        adc    ($6C,x)
+1467  6C 6F 20     jmp    ($206F)
+146A  57 65        eor    [$65],y
+146C  6C 74 21     jmp    ($2174)
+146F  0A           asl    a
+1470  00           brk
+1471  00           brk
+1472  00           brk
+1473  00           brk
+1474  00           brk
+1475  00           brk
+1476  00           brk
+1477  00           brk
+1478  02 00        cop    $00
+147A  00           brk
+147B  01 00        ora    ($00,x)
+147D  00           brk
+147E  00           brk
+147F  00           brk
+1480  00           brk
+1481  00           brk
+1482  00           brk
+1483  00           brk
+1484  00           brk
+1485  00           brk
+1486  04 01        tsb    $01
+1488  00           brk
+1489  01 00        ora    ($00,x)
+148B  00           brk
+148C  00           brk
+148D  00           brk
+148E  00           brk
+148F  00           brk
+1490  00           brk
+1491  00           brk
+1492  00           brk
+1493  00           brk
+1494  04 02        tsb    $02
+1496  00           brk
+1497  01 00        ora    ($00,x)
+1499  00           brk
+149A  00           brk
+149B  20 20 20     jsr    $2020
+149E  20 20 20     jsr    $2020
+14A1  20 20 20     jsr    $2020
+14A4  20 20 20     jsr    $2020
+14A7  20 20 20     jsr    $2020
+14AA  20 20 20     jsr    $2020
+14AD  20 20 20     jsr    $2020
+14B0  20 20 20     jsr    $2020
+14B3  20 20 20     jsr    $2020
+14B6  20 20 20     jsr    $2020
+14B9  20 20 20     jsr    $2020
+14BC  20 20 20     jsr    $2020
+14BF  20 20 20     jsr    $2020
+14C2  20 20 20     jsr    $2020
+14C5  20 20 20     jsr    $2020
+14C8  20 20 20     jsr    $2020
+14CB  20 20 20     jsr    $2020
+14CE  20 20 20     jsr    $2020
+14D1  20 20 20     jsr    $2020
+14D4  20 20 20     jsr    $2020
+14D7  20 20 20     jsr    $2020
+14DA  20 20 20     jsr    $2020
+14DD  20 20 20     jsr    $2020
+14E0  20 20 20     jsr    $2020
+14E3  20 20 20     jsr    $2020
+14E6  20 20 20     jsr    $2020
+14E9  20 20 20     jsr    $2020
+14EC  20 20 20     jsr    $2020
+14EF  20 20 20     jsr    $2020
+14F2  20 20 20     jsr    $2020
+14F5  20 20 20     jsr    $2020
+14F8  20 20 20     jsr    $2020
+14FB  20 20 20     jsr    $2020
+14FE  20 20 20     jsr    $2020
+1501  20 20 20     jsr    $2020
+1504  20 20 20     jsr    $2020
+1507  20 20 20     jsr    $2020
+150A  20 20 20     jsr    $2020
+150D  20 20 20     jsr    $2020
+1510  20 20 20     jsr    $2020
+1513  20 20 20     jsr    $2020
+1516  20 20 20     jsr    $2020
+1519  20 20 20     jsr    $2020
+151C  20 20 20     jsr    $2020
+151F  20 20 20     jsr    $2020
+1522  20 20 20     jsr    $2020
+1525  20 20 20     jsr    $2020
+1528  20 20 20     jsr    $2020
+152B  20 20 20     jsr    $2020
+152E  20 20 20     jsr    $2020
+1531  20 20 20     jsr    $2020
+1534  20 20 20     jsr    $2020
+1537  20 20 20     jsr    $2020
+153A  20 20 20     jsr    $2020
+153D  20 20 20     jsr    $2020
+1540  20 20 20     jsr    $2020
+1543  20 20 20     jsr    $2020
+1546  20 20 20     jsr    $2020
+1549  20 20 20     jsr    $2020
+154C  20 20 20     jsr    $2020
+154F  20 20 20     jsr    $2020
+1552  20 20 20     jsr    $2020
+1555  20 20 20     jsr    $2020
+1558  20 20 20     jsr    $2020
+155B  20 20 20     jsr    $2020
+155E  20 20 20     jsr    $2020
+1561  20 20 20     jsr    $2020
+1564  20 20 20     jsr    $2020
+1567  20 20 20     jsr    $2020
+156A  20 20 20     jsr    $2020
+156D  20 20 20     jsr    $2020
+1570  20 20 20     jsr    $2020
+1573  20 20 20     jsr    $2020
+1576  20 20 20     jsr    $2020
+1579  20 20 20     jsr    $2020
+157C  20 20 20     jsr    $2020
+157F  20 20 20     jsr    $2020
+1582  20 20 20     jsr    $2020
+1585  20 20 20     jsr    $2020
+1588  20 30 31     jsr    $3130
+158B  32 33        and    ($33)
+158D  34 35        bit    $35,x
+158F  36 37        rol    $37,x
+1591  38           sec
+1592  39 41 42     and    $4241,y
+1595  43 44        eor    $44,s
+1597  45 46        eor    $46
+1599  00           brk
+159A  30 31        bmi    $15CD
+159C  32 33        and    ($33)
+159E  34 35        bit    $35,x
+15A0  36 37        rol    $37,x
+15A2  38           sec
+15A3  39 61 62     and    $6261,y
+15A6  63 64        adc    $64,s
+15A8  65 66        adc    $66
+15AA  00           brk
+15AB  54 4D 50     mvn    $50,$4D
+15AE  00           brk
+15AF  00           brk
+15B0  20 20 20     jsr    $2020
+15B3  20 20 20     jsr    $2020
+15B6  20 20 20     jsr    $2020
+15B9  30 30        bmi    $15EB
+15BB  30 30        bmi    $15ED
+15BD  30 20        bmi    $15DF
+15BF  20 20 20     jsr    $2020
+15C2  20 20 20     jsr    $2020
+15C5  20 20 20     jsr    $2020
+15C8  20 20 20     jsr    $2020
+15CB  20 20 20     jsr    $2020
+15CE  20 20 90     jsr    $9020
+15D1  40           rti
+15D2  40           rti
+15D3  40           rti
+15D4  40           rti
+15D5  40           rti
+15D6  40           rti
+15D7  40           rti
+15D8  40           rti
+15D9  40           rti
+15DA  40           rti
+15DB  40           rti
+15DC  40           rti
+15DD  40           rti
+15DE  40           rti
+15DF  40           rti
+15E0  0C 0C 0C     tsb    $0C0C
+15E3  0C 0C 0C     tsb    $0C0C
+15E6  0C 0C 0C     tsb    $0C0C
+15E9  0C 40 40     tsb    $4040
+15EC  40           rti
+15ED  40           rti
+15EE  40           rti
+15EF  40           rti
+15F0  40           rti
+15F1  09 09 09     ora    #$0909    ; Note: 16-bit instruction
+15F4  09 09 09     ora    #$0909    ; Note: 16-bit instruction
+15F7  01 01        ora    ($01,x)
+15F9  01 01        ora    ($01,x)
+15FB  01 01        ora    ($01,x)
+15FD  01 01        ora    ($01,x)
+15FF  01 01        ora    ($01,x)
+1601  01 01        ora    ($01,x)
+1603  01 01        ora    ($01,x)
+1605  01 01        ora    ($01,x)
+1607  01 01        ora    ($01,x)
+1609  01 01        ora    ($01,x)
+160B  40           rti
+160C  40           rti
+160D  40           rti
+160E  40           rti
+160F  40           rti
+1610  40           rti
+1611  0A           asl    a
+1612  0A           asl    a
+1613  0A           asl    a
+1614  0A           asl    a
+1615  0A           asl    a
+1616  0A           asl    a
+1617  02 02        cop    $02
+1619  02 02        cop    $02
+161B  02 02        cop    $02
+161D  02 02        cop    $02
+161F  02 02        cop    $02
+1621  02 02        cop    $02
+1623  02 02        cop    $02
+1625  02 02        cop    $02
+1627  02 02        cop    $02
+1629  02 02        cop    $02
+162B  40           rti
+162C  40           rti
+162D  40           rti
+162E  40           rti
+162F  20 20 20     jsr    $2020
+1632  20 20 20     jsr    $2020
+1635  20 20 20     jsr    $2020
+1638  20 20 20     jsr    $2020
+163B  20 20 20     jsr    $2020
+163E  20 20 20     jsr    $2020
+1641  20 20 20     jsr    $2020
+1644  20 20 20     jsr    $2020
+1647  20 20 20     jsr    $2020
+164A  20 20 20     jsr    $2020
+164D  20 20 20     jsr    $2020
+1650  20 20 20     jsr    $2020
+1653  20 20 20     jsr    $2020
+1656  20 20 20     jsr    $2020
+1659  20 20 20     jsr    $2020
+165C  20 20 20     jsr    $2020
+165F  20 20 20     jsr    $2020
+1662  20 20 20     jsr    $2020
+1665  20 20 20     jsr    $2020
+1668  20 20 20     jsr    $2020
+166B  20 20 20     jsr    $2020
+166E  20 20 20     jsr    $2020
+1671  20 20 20     jsr    $2020
+1674  20 20 20     jsr    $2020
+1677  20 20 20     jsr    $2020
+167A  20 20 20     jsr    $2020
+167D  20 20 20     jsr    $2020
+1680  20 20 20     jsr    $2020
+1683  20 20 20     jsr    $2020
+1686  20 20 20     jsr    $2020
+1689  20 20 20     jsr    $2020
+168C  20 20 20     jsr    $2020
+168F  20 20 20     jsr    $2020
+1692  20 20 20     jsr    $2020
+1695  20 20 20     jsr    $2020
+1698  20 20 20     jsr    $2020
+169B  20 20 20     jsr    $2020
+169E  20 20 20     jsr    $2020
+16A1  20 20 20     jsr    $2020
+16A4  20 20 20     jsr    $2020
+16A7  20 20 20     jsr    $2020
+16AA  20 20 20     jsr    $2020
+16AD  20 20 20     jsr    $2020
+16B0  01 00        ora    ($00,x)
+16B2  0A           asl    a
+16B3  00           brk
+16B4  00           brk
+16B5  00           brk
+16B6  02 00        cop    $00
+16B8  01 00        ora    ($00,x)
+16BA  2B           pld
+16BB  03 00        ora    $00,s
+16BD  00           brk
+16BE  03 00        ora    $00,s
+16C0  00           brk
+16C1  00           brk
+16C2  00           brk
+16C3  00           brk
+16C4  02 00        cop    $00
+16C6  03 00        ora    $00,s
+16C8  02 00        cop    $00
+16CA  00           brk
+16CB  00           brk
+16CC  03 00        ora    $00,s
+16CE  05 00        ora    $00
+16D0  00           brk
+16D1  00           brk
+16D2  02 00        cop    $00
+16D4  03 00        ora    $00,s
+16D6  07 00        ora    [$00]
+16D8  00           brk
+16D9  00           brk
+16DA  01 00        ora    ($00,x)
+16DC  1F 00 00 00  ora    $000000,x
+16E0  02 00        cop    $00
+16E2  04 00        tsb    $00
+16E4  00           brk
+16E5  00           brk
+16E6  00           brk
+16E7  00           brk
+16E8  01 00        ora    ($00,x)
+16EA  24 00        bit    $00
+16EC  00           brk
+16ED  00           brk
+16EE  02 00        cop    $00
+16F0  04 00        tsb    $00
+16F2  00           brk
+16F3  00           brk
+16F4  00           brk
+16F5  00           brk
+16F6  01 00        ora    ($00,x)
+16F8  51 00        eor    ($00),y
+16FA  00           brk
+16FB  00           brk
+16FC  02 00        cop    $00
+16FE  04 00        tsb    $00
+1700  00           brk
+1701  00           brk
+1702  00           brk
+1703  00           brk
+1704  01 00        ora    ($00,x)
+1706  81 00        sta    ($00,x)
+1708  00           brk
+1709  00           brk
+170A  02 00        cop    $00
+170C  01 00        ora    ($00,x)
+170E  0E 00 00     asl    $0000
+1711  00           brk
+1712  01 00        ora    ($00,x)
+1714  AD 00 00     lda    $0000
+1717  00           brk
+1718  02 00        cop    $00
+171A  04 00        tsb    $00
+171C  00           brk
+171D  00           brk
+171E  00           brk
+171F  00           brk
+1720  01 00        ora    ($00,x)
+1722  B2 00        lda    ($00)
+1724  00           brk
+1725  00           brk
+1726  02 00        cop    $00
+1728  04 00        tsb    $00
+172A  00           brk
+172B  00           brk
+172C  00           brk
+172D  00           brk
+172E  01 00        ora    ($00,x)
+1730  C0 00        cpy    #$00
+1732  00           brk
+1733  00           brk
+1734  02 00        cop    $00
+1736  01 00        ora    ($00,x)
+1738  6D 00 00     adc    $0000
+173B  00           brk
+173C  01 00        ora    ($00,x)
+173E  DD 00 00     cmp    $0000,x
+1741  00           brk
+1742  02 00        cop    $00
+1744  01 00        ora    ($00,x)
+1746  0E 00 00     asl    $0000
+1749  00           brk
+174A  01 00        ora    ($00,x)
+174C  0B           phd
+174D  01 00        ora    ($00,x)
+174F  00           brk
+1750  02 00        cop    $00
+1752  01 00        ora    ($00,x)
+1754  0E 00 00     asl    $0000
+1757  00           brk
+1758  01 00        ora    ($00,x)
+175A  38           sec
+175B  01 00        ora    ($00,x)
+175D  00           brk
+175E  02 00        cop    $00
+1760  01 00        ora    ($00,x)
+1762  0E 00 00     asl    $0000
+1765  00           brk
+1766  01 00        ora    ($00,x)
+1768  5C 01 00 00  jmp    $000001
+176C  02 00        cop    $00
+176E  01 00        ora    ($00,x)
+1770  B4 03        ldy    $03,x
+1772  00           brk
+1773  00           brk
+1774  01 00        ora    ($00,x)
+1776  66 01        ror    $01
+1778  00           brk
+1779  00           brk
+177A  02 00        cop    $00
+177C  03 00        ora    $00,s
+177E  0F 00 00 00  ora    $000000
+1782  01 00        ora    ($00,x)
+1784  69 01 00     adc    #$0001    ; Note: 16-bit instruction
+1787  00           brk
+1788  02 00        cop    $00
+178A  04 00        tsb    $00
+178C  06 00        asl    $00
+178E  00           brk
+178F  00           brk
+1790  01 00        ora    ($00,x)
+1792  6F 01 00 00  adc    $000001
+1796  02 00        cop    $00
+1798  01 00        ora    ($00,x)
+179A  F9 03 00     sbc    $0003,y
+179D  00           brk
+179E  01 00        ora    ($00,x)
+17A0  72 01        adc    ($01)
+17A2  00           brk
+17A3  00           brk
+17A4  02 00        cop    $00
+17A6  04 00        tsb    $00
+17A8  06 00        asl    $00
+17AA  00           brk
+17AB  00           brk
+17AC  01 00        ora    ($00,x)
+17AE  78           sei
+17AF  01 00        ora    ($00,x)
+17B1  00           brk
+17B2  02 00        cop    $00
+17B4  01 00        ora    ($00,x)
+17B6  F8           sed
+17B7  00           brk
+17B8  00           brk
+17B9  00           brk
+17BA  01 00        ora    ($00,x)
+17BC  7E 01 00     ror    $0001,x
+17BF  00           brk
+17C0  02 00        cop    $00
+17C2  04 00        tsb    $00
+17C4  06 00        asl    $00
+17C6  00           brk
+17C7  00           brk
+17C8  01 00        ora    ($00,x)
+17CA  84 01        sty    $01
+17CC  00           brk
+17CD  00           brk
+17CE  02 00        cop    $00
+17D0  01 00        ora    ($00,x)
+17D2  26 01        rol    $01
+17D4  00           brk
+17D5  00           brk
+17D6  01 00        ora    ($00,x)
+17D8  94 01        sty    $01,x
+17DA  00           brk
+17DB  00           brk
+17DC  02 00        cop    $00
+17DE  01 00        ora    ($00,x)
+17E0  6D 00 00     adc    $0000
+17E3  00           brk
+17E4  01 00        ora    ($00,x)
+17E6  A2 01        ldx    #$01
+17E8  00           brk
+17E9  00           brk
+17EA  02 00        cop    $00
+17EC  01 00        ora    ($00,x)
+17EE  9C 00 00     stz    $0000
+17F1  00           brk
+17F2  01 00        ora    ($00,x)
+17F4  A7 01        lda    [$01]
+17F6  00           brk
+17F7  00           brk
+17F8  02 00        cop    $00
+17FA  04 00        tsb    $00
+17FC  05 00        ora    $00
+17FE  00           brk
+17FF  00           brk
+1800  01 00        ora    ($00,x)
+1802  B9 01 00     lda    $0001,y
+1805  00           brk
+1806  02 00        cop    $00
+1808  01 00        ora    ($00,x)
+180A  9C 00 00     stz    $0000
+180D  00           brk
+180E  01 00        ora    ($00,x)
+1810  BE 01 00     ldx    $0001,y
+1813  00           brk
+1814  02 00        cop    $00
+1816  04 00        tsb    $00
+1818  05 00        ora    $00
+181A  00           brk
+181B  00           brk
+181C  01 00        ora    ($00,x)
+181E  C5 01        cmp    $01
+1820  00           brk
+1821  00           brk
+1822  02 00        cop    $00
+1824  04 00        tsb    $00
+1826  05 00        ora    $00
+1828  00           brk
+1829  00           brk
+182A  01 00        ora    ($00,x)
+182C  EE 01 00     inc    $0001
+182F  00           brk
+1830  02 00        cop    $00
+1832  03 00        ora    $00,s
+1834  2A           rol    a
+1835  00           brk
+1836  00           brk
+1837  00           brk
+1838  01 00        ora    ($00,x)
+183A  F1 01        sbc    ($01),y
+183C  00           brk
+183D  00           brk
+183E  02 00        cop    $00
+1840  04 00        tsb    $00
+1842  06 00        asl    $00
+1844  00           brk
+1845  00           brk
+1846  01 00        ora    ($00,x)
+1848  F7 01        sbc    [$01],y
+184A  00           brk
+184B  00           brk
+184C  02 00        cop    $00
+184E  01 00        ora    ($00,x)
+1850  F9 03 00     sbc    $0003,y
+1853  00           brk
+1854  01 00        ora    ($00,x)
+1856  FA           plx
+1857  01 00        ora    ($00,x)
+1859  00           brk
+185A  02 00        cop    $00
+185C  04 00        tsb    $00
+185E  06 00        asl    $00
+1860  00           brk
+1861  00           brk
+1862  01 00        ora    ($00,x)
+1864  00           brk
+1865  02 00        cop    $00
+1867  00           brk
+1868  02 00        cop    $00
+186A  01 00        ora    ($00,x)
+186C  F8           sed
+186D  00           brk
+186E  00           brk
+186F  00           brk
+1870  01 00        ora    ($00,x)
+1872  1E 02 00     asl    $0002,x
+1875  00           brk
+1876  02 00        cop    $00
+1878  03 00        ora    $00,s
+187A  35 00        and    $00,x
+187C  00           brk
+187D  00           brk
+187E  01 00        ora    ($00,x)
+1880  21 02        and    ($02,x)
+1882  00           brk
+1883  00           brk
+1884  02 00        cop    $00
+1886  04 00        tsb    $00
+1888  06 00        asl    $00
+188A  00           brk
+188B  00           brk
+188C  01 00        ora    ($00,x)
+188E  27 02        and    [$02]
+1890  00           brk
+1891  00           brk
+1892  02 00        cop    $00
+1894  01 00        ora    ($00,x)
+1896  F9 03 00     sbc    $0003,y
+1899  00           brk
+189A  01 00        ora    ($00,x)
+189C  2A           rol    a
+189D  02 00        cop    $00
+189F  00           brk
+18A0  02 00        cop    $00
+18A2  04 00        tsb    $00
+18A4  06 00        asl    $00
+18A6  00           brk
+18A7  00           brk
+18A8  01 00        ora    ($00,x)
+18AA  30 02        bmi    $18AE
+18AC  00           brk
+18AD  00           brk
+18AE  02 00        cop    $00
+18B0  01 00        ora    ($00,x)
+18B2  F8           sed
+18B3  00           brk
+18B4  00           brk
+18B5  00           brk
+18B6  01 00        ora    ($00,x)
+18B8  6B           rtl
+18B9  02 00        cop    $00
+18BB  00           brk
+18BC  02 00        cop    $00
+18BE  03 00        ora    $00,s
+18C0  40           rti
+18C1  00           brk
+18C2  00           brk
+18C3  00           brk
+18C4  01 00        ora    ($00,x)
+18C6  6E 02 00     ror    $0002
+18C9  00           brk
+18CA  02 00        cop    $00
+18CC  04 00        tsb    $00
+18CE  06 00        asl    $00
+18D0  00           brk
+18D1  00           brk
+18D2  01 00        ora    ($00,x)
+18D4  74 02        stz    $02,x
+18D6  00           brk
+18D7  00           brk
+18D8  02 00        cop    $00
+18DA  01 00        ora    ($00,x)
+18DC  F9 03 00     sbc    $0003,y
+18DF  00           brk
+18E0  01 00        ora    ($00,x)
+18E2  77 02        adc    [$02],y
+18E4  00           brk
+18E5  00           brk
+18E6  02 00        cop    $00
+18E8  04 00        tsb    $00
+18EA  06 00        asl    $00
+18EC  00           brk
+18ED  00           brk
+18EE  01 00        ora    ($00,x)
+18F0  7D 02 00     adc    $0002,x
+18F3  00           brk
+18F4  02 00        cop    $00
+18F6  01 00        ora    ($00,x)
+18F8  F8           sed
+18F9  00           brk
+18FA  00           brk
+18FB  00           brk
+18FC  01 00        ora    ($00,x)
+18FE  9A           txs
+18FF  02 00        cop    $00
+1901  00           brk
+1902  02 00        cop    $00
+1904  03 00        ora    $00,s
+1906  51 00        eor    ($00),y
+1908  00           brk
+1909  00           brk
+190A  01 00        ora    ($00,x)
+190C  9D 02 00     sta    $0002,x
+190F  00           brk
+1910  02 00        cop    $00
+1912  04 00        tsb    $00
+1914  06 00        asl    $00
+1916  00           brk
+1917  00           brk
+1918  01 00        ora    ($00,x)
+191A  A3 02        lda    $02,s
+191C  00           brk
+191D  00           brk
+191E  02 00        cop    $00
+1920  01 00        ora    ($00,x)
+1922  F9 03 00     sbc    $0003,y
+1925  00           brk
+1926  01 00        ora    ($00,x)
+1928  A6 02        ldx    $02
+192A  00           brk
+192B  00           brk
+192C  02 00        cop    $00
+192E  04 00        tsb    $00
+1930  06 00        asl    $00
+1932  00           brk
+1933  00           brk
+1934  01 00        ora    ($00,x)
+1936  AC 02 00     ldy    $0002
+1939  00           brk
+193A  02 00        cop    $00
+193C  01 00        ora    ($00,x)
+193E  F8           sed
+193F  00           brk
+1940  00           brk
+1941  00           brk
+1942  01 00        ora    ($00,x)
+1944  CE 02 00     dec    $0002
+1947  00           brk
+1948  02 00        cop    $00
+194A  03 00        ora    $00,s
+194C  5E 00 00     lsr    $0000,x
+194F  00           brk
+1950  01 00        ora    ($00,x)
+1952  D1 02        cmp    ($02),y
+1954  00           brk
+1955  00           brk
+1956  02 00        cop    $00
+1958  04 00        tsb    $00
+195A  06 00        asl    $00
+195C  00           brk
+195D  00           brk
+195E  01 00        ora    ($00,x)
+1960  D7 02        cmp    [$02],y
+1962  00           brk
+1963  00           brk
+1964  02 00        cop    $00
+1966  01 00        ora    ($00,x)
+1968  F9 03 00     sbc    $0003,y
+196B  00           brk
+196C  01 00        ora    ($00,x)
+196E  DA           phx
+196F  02 00        cop    $00
+1971  00           brk
+1972  02 00        cop    $00
+1974  04 00        tsb    $00
+1976  06 00        asl    $00
+1978  00           brk
+1979  00           brk
+197A  01 00        ora    ($00,x)
+197C  E0 02        cpx    #$02
+197E  00           brk
+197F  00           brk
+1980  02 00        cop    $00
+1982  01 00        ora    ($00,x)
+1984  F8           sed
+1985  00           brk
+1986  00           brk
+1987  00           brk
+1988  01 00        ora    ($00,x)
+198A  04 03        tsb    $03
+198C  00           brk
+198D  00           brk
+198E  02 00        cop    $00
+1990  03 00        ora    $00,s
+1992  70 00        bvs    $1994
+1994  00           brk
+1995  00           brk
+1996  01 00        ora    ($00,x)
+1998  07 03        ora    [$03]
+199A  00           brk
+199B  00           brk
+199C  02 00        cop    $00
+199E  04 00        tsb    $00
+19A0  06 00        asl    $00
+19A2  00           brk
+19A3  00           brk
+19A4  01 00        ora    ($00,x)
+19A6  0D 03 00     ora    $0003
+19A9  00           brk
+19AA  02 00        cop    $00
+19AC  01 00        ora    ($00,x)
+19AE  F9 03 00     sbc    $0003,y
+19B1  00           brk
+19B2  01 00        ora    ($00,x)
+19B4  10 03        bpl    $19B9
+19B6  00           brk
+19B7  00           brk
+19B8  02 00        cop    $00
+19BA  04 00        tsb    $00
+19BC  06 00        asl    $00
+19BE  00           brk
+19BF  00           brk
+19C0  01 00        ora    ($00,x)
+19C2  16 03        asl    $03,x
+19C4  00           brk
+19C5  00           brk
+19C6  02 00        cop    $00
+19C8  01 00        ora    ($00,x)
+19CA  F8           sed
+19CB  00           brk
+19CC  00           brk
+19CD  00           brk
+19CE  01 00        ora    ($00,x)
+19D0  34 03        bit    $03,x
+19D2  00           brk
+19D3  00           brk
+19D4  02 00        cop    $00
+19D6  01 00        ora    ($00,x)
+19D8  4D 04 00     eor    $0004
+19DB  00           brk
+19DC  01 00        ora    ($00,x)
+19DE  37 03        and    [$03],y
+19E0  00           brk
+19E1  00           brk
+19E2  02 00        cop    $00
+19E4  03 00        ora    $00,s
+19E6  05 00        ora    $00
+19E8  00           brk
+19E9  00           brk
+19EA  01 00        ora    ($00,x)
+19EC  3B           tsc
+19ED  03 00        ora    $00,s
+19EF  00           brk
+19F0  02 00        cop    $00
+19F2  03 00        ora    $00,s
+19F4  00           brk
+19F5  00           brk
+19F6  00           brk
+19F7  00           brk
+19F8  01 00        ora    ($00,x)
+19FA  3F 03 00 00  and    $000003,x
+19FE  02 00        cop    $00
+1A00  01 00        ora    ($00,x)
+1A02  74 04        stz    $04,x
+1A04  00           brk
+1A05  00           brk
+1A06  01 00        ora    ($00,x)
+1A08  42 03        wdm    $03
+1A0A  00           brk
+1A0B  00           brk
+1A0C  02 00        cop    $00
+1A0E  04 00        tsb    $00
+1A10  03 00        ora    $00,s
+1A12  00           brk
+1A13  00           brk
+1A14  01 00        ora    ($00,x)
+1A16  45 03        eor    $03
+1A18  00           brk
+1A19  00           brk
+1A1A  02 00        cop    $00
+1A1C  03 00        ora    $00,s
+1A1E  05 00        ora    $00
+1A20  00           brk
+1A21  00           brk
+1A22  01 00        ora    ($00,x)
+1A24  49 03 00     eor    #$0003    ; Note: 16-bit instruction
+1A27  00           brk
+1A28  02 00        cop    $00
+1A2A  03 00        ora    $00,s
+1A2C  00           brk
+1A2D  00           brk
+1A2E  00           brk
+1A2F  00           brk
+1A30  01 00        ora    ($00,x)
+1A32  4D 03 00     eor    $0003
+1A35  00           brk
+1A36  02 00        cop    $00
+1A38  01 00        ora    ($00,x)
+1A3A  74 04        stz    $04,x
+1A3C  00           brk
+1A3D  00           brk
+1A3E  01 00        ora    ($00,x)
+1A40  50 03        bvc    $1A45
+1A42  00           brk
+1A43  00           brk
+1A44  02 00        cop    $00
+1A46  04 00        tsb    $00
+1A48  01 00        ora    ($00,x)
+1A4A  00           brk
+1A4B  00           brk
+1A4C  01 00        ora    ($00,x)
+1A4E  54 03 00     mvn    $00,$03
+1A51  00           brk
+1A52  02 00        cop    $00
+1A54  04 00        tsb    $00
+1A56  03 00        ora    $00,s
+1A58  00           brk
+1A59  00           brk
+1A5A  01 00        ora    ($00,x)
+1A5C  58           cli
+1A5D  03 00        ora    $00,s
+1A5F  00           brk
+1A60  02 00        cop    $00
+1A62  03 00        ora    $00,s
+1A64  80 00        bra    $1A66
+1A66  00           brk
+1A67  00           brk
+1A68  01 00        ora    ($00,x)
+1A6A  5B           tcd
+1A6B  03 00        ora    $00,s
+1A6D  00           brk
+1A6E  02 00        cop    $00
+1A70  04 00        tsb    $00
+1A72  06 00        asl    $00
+1A74  00           brk
+1A75  00           brk
+1A76  01 00        ora    ($00,x)
+1A78  61 03        adc    ($03,x)
+1A7A  00           brk
+1A7B  00           brk
+1A7C  02 00        cop    $00
+1A7E  01 00        ora    ($00,x)
+1A80  F9 03 00     sbc    $0003,y
+1A83  00           brk
+1A84  01 00        ora    ($00,x)
+1A86  64 03        stz    $03
+1A88  00           brk
+1A89  00           brk
+1A8A  02 00        cop    $00
+1A8C  04 00        tsb    $00
+1A8E  06 00        asl    $00
+1A90  00           brk
+1A91  00           brk
+1A92  01 00        ora    ($00,x)
+1A94  6A           ror    a
+1A95  03 00        ora    $00,s
+1A97  00           brk
+1A98  02 00        cop    $00
+1A9A  01 00        ora    ($00,x)
+1A9C  F8           sed
+1A9D  00           brk
+1A9E  00           brk
+1A9F  00           brk
+1AA0  01 00        ora    ($00,x)
+1AA2  6D 03 00     adc    $0003
+1AA5  00           brk
+1AA6  02 00        cop    $00
+1AA8  03 00        ora    $00,s
+1AAA  9E 00 00     stz    $0000,x
+1AAD  00           brk
+1AAE  01 00        ora    ($00,x)
+1AB0  70 03        bvs    $1AB5
+1AB2  00           brk
+1AB3  00           brk
+1AB4  02 00        cop    $00
+1AB6  03 00        ora    $00,s
+1AB8  90 00        bcc    $1ABA
+1ABA  00           brk
+1ABB  00           brk
+1ABC  01 00        ora    ($00,x)
+1ABE  73 03        adc    ($03,s),y
+1AC0  00           brk
+1AC1  00           brk
+1AC2  02 00        cop    $00
+1AC4  01 00        ora    ($00,x)
+1AC6  74 04        stz    $04,x
+1AC8  00           brk
+1AC9  00           brk
+1ACA  01 00        ora    ($00,x)
+1ACC  79 03 00     adc    $0003,y
+1ACF  00           brk
+1AD0  02 00        cop    $00
+1AD2  03 00        ora    $00,s
+1AD4  A1 00        lda    ($00,x)
+1AD6  00           brk
+1AD7  00           brk
+1AD8  01 00        ora    ($00,x)
+1ADA  7C 03 00     jmp    ($0003,x)
+1ADD  00           brk
+1ADE  02 00        cop    $00
+1AE0  04 00        tsb    $00
+1AE2  06 00        asl    $00
+1AE4  00           brk
+1AE5  00           brk
+1AE6  01 00        ora    ($00,x)
+1AE8  82 03 00     brl    $1AEE
+1AEB  00           brk
+1AEC  02 00        cop    $00
+1AEE  01 00        ora    ($00,x)
+1AF0  F9 03 00     sbc    $0003,y
+1AF3  00           brk
+1AF4  01 00        ora    ($00,x)
+1AF6  85 03        sta    $03
+1AF8  00           brk
+1AF9  00           brk
+1AFA  02 00        cop    $00
+1AFC  04 00        tsb    $00
+1AFE  06 00        asl    $00
+1B00  00           brk
+1B01  00           brk
+1B02  01 00        ora    ($00,x)
+1B04  8B           phb
+1B05  03 00        ora    $00,s
+1B07  00           brk
+1B08  02 00        cop    $00
+1B0A  01 00        ora    ($00,x)
+1B0C  F8           sed
+1B0D  00           brk
+1B0E  00           brk
+1B0F  00           brk
+1B10  01 00        ora    ($00,x)
+1B12  96 03        stx    $03,y
+1B14  00           brk
+1B15  00           brk
+1B16  02 00        cop    $00
+1B18  04 00        tsb    $00
+1B1A  06 00        asl    $00
+1B1C  00           brk
+1B1D  00           brk
+1B1E  01 00        ora    ($00,x)
+1B20  99 03 00     sta    $0003,y
+1B23  00           brk
+1B24  02 00        cop    $00
+1B26  01 00        ora    ($00,x)
+1B28  98           tya
+1B29  04 00        tsb    $00
+1B2B  00           brk
+1B2C  01 00        ora    ($00,x)
+1B2E  9C 03 00     stz    $0003
+1B31  00           brk
+1B32  02 00        cop    $00
+1B34  03 00        ora    $00,s
+1B36  AE 00 00     ldx    $0000
+1B39  00           brk
+1B3A  01 00        ora    ($00,x)
+1B3C  9F 03 00 00  sta    $000003,x
+1B40  02 00        cop    $00
+1B42  04 00        tsb    $00
+1B44  01 00        ora    ($00,x)
+1B46  00           brk
+1B47  00           brk
+1B48  01 00        ora    ($00,x)
+1B4A  A6 03        ldx    $03
+1B4C  00           brk
+1B4D  00           brk
+1B4E  02 00        cop    $00
+1B50  01 00        ora    ($00,x)
+1B52  04 05        tsb    $05
+1B54  00           brk
+1B55  00           brk
+1B56  01 00        ora    ($00,x)
+1B58  BD 03 00     lda    $0003,x
+1B5B  00           brk
+1B5C  02 00        cop    $00
+1B5E  03 00        ora    $00,s
+1B60  BB           tyx
+1B61  00           brk
+1B62  00           brk
+1B63  00           brk
+1B64  01 00        ora    ($00,x)
+1B66  E8           inx
+1B67  03 00        ora    $00,s
+1B69  00           brk
+1B6A  02 00        cop    $00
+1B6C  03 00        ora    $00,s
+1B6E  D3 01        cmp    ($01,s),y
+1B70  00           brk
+1B71  00           brk
+1B72  01 00        ora    ($00,x)
+1B74  28           plp
+1B75  04 00        tsb    $00
+1B77  00           brk
+1B78  02 00        cop    $00
+1B7A  01 00        ora    ($00,x)
+1B7C  33 05        and    ($05,s),y
+1B7E  00           brk
+1B7F  00           brk
+1B80  01 00        ora    ($00,x)
+1B82  56 04        lsr    $04,x
+1B84  00           brk
+1B85  00           brk
+1B86  02 00        cop    $00
+1B88  03 00        ora    $00,s
+1B8A  BB           tyx
+1B8B  00           brk
+1B8C  00           brk
+1B8D  00           brk
+1B8E  01 00        ora    ($00,x)
+1B90  5D 04 00     eor    $0004,x
+1B93  00           brk
+1B94  02 00        cop    $00
+1B96  01 00        ora    ($00,x)
+1B98  F0 0B        beq    $1BA5
+1B9A  00           brk
+1B9B  00           brk
+1B9C  01 00        ora    ($00,x)
+1B9E  68           pla
+1B9F  04 00        tsb    $00
+1BA1  00           brk
+1BA2  02 00        cop    $00
+1BA4  03 00        ora    $00,s
+1BA6  D3 01        cmp    ($01,s),y
+1BA8  00           brk
+1BA9  00           brk
+1BAA  01 00        ora    ($00,x)
+1BAC  80 04        bra    $1BB2
+1BAE  00           brk
+1BAF  00           brk
+1BB0  02 00        cop    $00
+1BB2  01 00        ora    ($00,x)
+1BB4  B4 03        ldy    $03,x
+1BB6  00           brk
+1BB7  00           brk
+1BB8  01 00        ora    ($00,x)
+1BBA  88           dey
+1BBB  04 00        tsb    $00
+1BBD  00           brk
+1BBE  02 00        cop    $00
+1BC0  01 00        ora    ($00,x)
+1BC2  CA           dex
+1BC3  0C 00 00     tsb    $0000
+1BC6  01 00        ora    ($00,x)
+1BC8  DB           stp
+1BC9  04 00        tsb    $00
+1BCB  00           brk
+1BCC  02 00        cop    $00
+1BCE  01 00        ora    ($00,x)
+1BD0  9B           txy
+1BD1  0D 00 00     ora    $0000
+1BD4  01 00        ora    ($00,x)
+1BD6  19 05 00     ora    $0005,y
+1BD9  00           brk
+1BDA  02 00        cop    $00
+1BDC  01 00        ora    ($00,x)
+1BDE  33 05        and    ($05,s),y
+1BE0  00           brk
+1BE1  00           brk
+1BE2  01 00        ora    ($00,x)
+1BE4  9A           txs
+1BE5  05 00        ora    $00
+1BE7  00           brk
+1BE8  02 00        cop    $00
+1BEA  01 00        ora    ($00,x)
+1BEC  90 0E        bcc    $1BFC
+1BEE  00           brk
+1BEF  00           brk
+1BF0  01 00        ora    ($00,x)
+1BF2  E6 05        inc    $05
+1BF4  00           brk
+1BF5  00           brk
+1BF6  02 00        cop    $00
+1BF8  01 00        ora    ($00,x)
+1BFA  73 10        adc    ($10,s),y
+1BFC  00           brk
+1BFD  00           brk
+1BFE  01 00        ora    ($00,x)
+1C00  EC 05 00     cpx    $0005
+1C03  00           brk
+1C04  02 00        cop    $00
+1C06  01 00        ora    ($00,x)
+1C08  0F 06 00 00  ora    $000006
+1C0C  01 00        ora    ($00,x)
+1C0E  F0 05        beq    $1C15
+1C10  00           brk
+1C11  00           brk
+1C12  02 00        cop    $00
+1C14  01 00        ora    ($00,x)
+1C16  14 06        trb    $06
+1C18  00           brk
+1C19  00           brk
+1C1A  01 00        ora    ($00,x)
+1C1C  F4 05 00     pea    $0005
+1C1F  00           brk
+1C20  02 00        cop    $00
+1C22  01 00        ora    ($00,x)
+1C24  19 06 00     ora    $0006,y
+1C27  00           brk
+1C28  01 00        ora    ($00,x)
+1C2A  F8           sed
+1C2B  05 00        ora    $00
+1C2D  00           brk
+1C2E  02 00        cop    $00
+1C30  01 00        ora    ($00,x)
+1C32  0A           asl    a
+1C33  06 00        asl    $00
+1C35  00           brk
+1C36  01 00        ora    ($00,x)
+1C38  FC 05 00     jsr    ($0005,x)
+1C3B  00           brk
+1C3C  02 00        cop    $00
+1C3E  01 00        ora    ($00,x)
+1C40  03 06        ora    $06,s
+1C42  00           brk
+1C43  00           brk
+1C44  01 00        ora    ($00,x)
+1C46  00           brk
+1C47  06 00        asl    $00
+1C49  00           brk
+1C4A  02 00        cop    $00
+1C4C  01 00        ora    ($00,x)
+1C4E  44 06 00     mvp    $00,$06
+1C51  00           brk
+1C52  01 00        ora    ($00,x)
+1C54  02 06        cop    $06
+1C56  00           brk
+1C57  00           brk
+1C58  02 00        cop    $00
+1C5A  01 00        ora    ($00,x)
+1C5C  49 06 00     eor    #$0006    ; Note: 16-bit instruction
+1C5F  00           brk
+1C60  01 00        ora    ($00,x)
+1C62  87 06        sta    [$06]
+1C64  00           brk
+1C65  00           brk
+1C66  02 00        cop    $00
+1C68  03 00        ora    $00,s
+1C6A  FA           plx
+1C6B  01 00        ora    ($00,x)
+1C6D  00           brk
+1C6E  01 00        ora    ($00,x)
+1C70  19 07 00     ora    $0007,y
+1C73  00           brk
+1C74  02 00        cop    $00
+1C76  03 00        ora    $00,s
+1C78  FA           plx
+1C79  01 00        ora    ($00,x)
+1C7B  00           brk
+1C7C  01 00        ora    ($00,x)
+1C7E  72 07        adc    ($07)
+1C80  00           brk
+1C81  00           brk
+1C82  02 00        cop    $00
+1C84  01 00        ora    ($00,x)
+1C86  73 10        adc    ($10,s),y
+1C88  00           brk
+1C89  00           brk
+1C8A  01 00        ora    ($00,x)
+1C8C  78           sei
+1C8D  07 00        ora    [$00]
+1C8F  00           brk
+1C90  02 00        cop    $00
+1C92  01 00        ora    ($00,x)
+1C94  55 08        eor    $08,x
+1C96  00           brk
+1C97  00           brk
+1C98  01 00        ora    ($00,x)
+1C9A  7C 07 00     jmp    ($0007,x)
+1C9D  00           brk
+1C9E  02 00        cop    $00
+1CA0  01 00        ora    ($00,x)
+1CA2  79 08 00     adc    $0008,y
+1CA5  00           brk
+1CA6  01 00        ora    ($00,x)
+1CA8  80 07        bra    $1CB1
+1CAA  00           brk
+1CAB  00           brk
+1CAC  02 00        cop    $00
+1CAE  01 00        ora    ($00,x)
+1CB0  41 08        eor    ($08,x)
+1CB2  00           brk
+1CB3  00           brk
+1CB4  01 00        ora    ($00,x)
+1CB6  84 07        sty    $07
+1CB8  00           brk
+1CB9  00           brk
+1CBA  02 00        cop    $00
+1CBC  01 00        ora    ($00,x)
+1CBE  7E 08 00     ror    $0008,x
+1CC1  00           brk
+1CC2  01 00        ora    ($00,x)
+1CC4  88           dey
+1CC5  07 00        ora    [$00]
+1CC7  00           brk
+1CC8  02 00        cop    $00
+1CCA  01 00        ora    ($00,x)
+1CCC  7E 08 00     ror    $0008,x
+1CCF  00           brk
+1CD0  01 00        ora    ($00,x)
+1CD2  8C 07 00     sty    $0007
+1CD5  00           brk
+1CD6  02 00        cop    $00
+1CD8  01 00        ora    ($00,x)
+1CDA  A3 07        lda    $07,s
+1CDC  00           brk
+1CDD  00           brk
+1CDE  01 00        ora    ($00,x)
+1CE0  90 07        bcc    $1CE9
+1CE2  00           brk
+1CE3  00           brk
+1CE4  02 00        cop    $00
+1CE6  01 00        ora    ($00,x)
+1CE8  67 08        adc    [$08]
+1CEA  00           brk
+1CEB  00           brk
+1CEC  01 00        ora    ($00,x)
+1CEE  94 07        sty    $07,x
+1CF0  00           brk
+1CF1  00           brk
+1CF2  02 00        cop    $00
+1CF4  01 00        ora    ($00,x)
+1CF6  6C 08 00     jmp    ($0008)
+1CF9  00           brk
+1CFA  01 00        ora    ($00,x)
+1CFC  98           tya
+1CFD  07 00        ora    [$00]
+1CFF  00           brk
+1D00  02 00        cop    $00
+1D02  01 00        ora    ($00,x)
+1D04  11 08        ora    ($08),y
+1D06  00           brk
+1D07  00           brk
+1D08  01 00        ora    ($00,x)
+1D0A  9C 07 00     stz    $0007
+1D0D  00           brk
+1D0E  02 00        cop    $00
+1D10  01 00        ora    ($00,x)
+1D12  83 08        sta    $08,s
+1D14  00           brk
+1D15  00           brk
+1D16  01 00        ora    ($00,x)
+1D18  A0 07        ldy    #$07
+1D1A  00           brk
+1D1B  00           brk
+1D1C  02 00        cop    $00
+1D1E  01 00        ora    ($00,x)
+1D20  79 08 00     adc    $0008,y
+1D23  00           brk
+1D24  01 00        ora    ($00,x)
+1D26  A2 07        ldx    #$07
+1D28  00           brk
+1D29  00           brk
+1D2A  02 00        cop    $00
+1D2C  01 00        ora    ($00,x)
+1D2E  91 0B        sta    ($0B),y
+1D30  00           brk
+1D31  00           brk
+1D32  01 00        ora    ($00,x)
+1D34  24 08        bit    $08
+1D36  00           brk
+1D37  00           brk
+1D38  02 00        cop    $00
+1D3A  01 00        ora    ($00,x)
+1D3C  99 10 00     sta    $0010,y
+1D3F  00           brk
+1D40  01 00        ora    ($00,x)
+1D42  57 08        eor    [$08],y
+1D44  00           brk
+1D45  00           brk
+1D46  02 00        cop    $00
+1D48  04 00        tsb    $00
+1D4A  56 00        lsr    $00,x
+1D4C  00           brk
+1D4D  00           brk
+1D4E  01 00        ora    ($00,x)
+1D50  94 08        sty    $08,x
+1D52  00           brk
+1D53  00           brk
+1D54  02 00        cop    $00
+1D56  03 00        ora    $00,s
+1D58  D3 01        cmp    ($01,s),y
+1D5A  00           brk
+1D5B  00           brk
+1D5C  01 00        ora    ($00,x)
+1D5E  99 08 00     sta    $0008,y
+1D61  00           brk
+1D62  02 00        cop    $00
+1D64  03 00        ora    $00,s
+1D66  E4 01        cpx    $01
+1D68  00           brk
+1D69  00           brk
+1D6A  01 00        ora    ($00,x)
+1D6C  12 09        ora    ($09)
+1D6E  00           brk
+1D6F  00           brk
+1D70  02 00        cop    $00
+1D72  04 00        tsb    $00
+1D74  56 02        lsr    $02,x
+1D76  00           brk
+1D77  00           brk
+1D78  01 00        ora    ($00,x)
+1D7A  43 09        eor    $09,s
+1D7C  00           brk
+1D7D  00           brk
+1D7E  02 00        cop    $00
+1D80  01 00        ora    ($00,x)
+1D82  B2 10        lda    ($10)
+1D84  00           brk
+1D85  00           brk
+1D86  01 00        ora    ($00,x)
+1D88  68           pla
+1D89  09 00 00     ora    #$0000    ; Note: 16-bit instruction
+1D8C  02 00        cop    $00
+1D8E  01 00        ora    ($00,x)
+1D90  C2 10        rep    #$10      ; Note: m=1, x=0
+1D92  00           brk
+1D93  00           brk
+1D94  01 00        ora    ($00,x)
+1D96  74 09        stz    $09,x
+1D98  00           brk
+1D99  00           brk
+1D9A  02 00        cop    $00
+1D9C  04 00        tsb    $00
+1D9E  56 02        lsr    $02,x
+1DA0  00           brk
+1DA1  00           brk
+1DA2  01 00        ora    ($00,x)
+1DA4  DB           stp
+1DA5  09 00        ora    #$00
+1DA7  00           brk
+1DA8  02 00        cop    $00
+1DAA  04 00        tsb    $00
+1DAC  58           cli
+1DAD  00           brk
+1DAE  00           brk
+1DAF  00           brk
+1DB0  01 00        ora    ($00,x)
+1DB2  4B           phk
+1DB3  0A           asl    a
+1DB4  00           brk
+1DB5  00           brk
+1DB6  02 00        cop    $00
+1DB8  04 00        tsb    $00
+1DBA  56 00        lsr    $00,x
+1DBC  00           brk
+1DBD  00           brk
+1DBE  01 00        ora    ($00,x)
+1DC0  EC 0A 00     cpx    $000A
+1DC3  00           brk
+1DC4  02 00        cop    $00
+1DC6  01 00        ora    ($00,x)
+1DC8  90 0E        bcc    $1DD8
+1DCA  00           brk
+1DCB  00           brk
+1DCC  01 00        ora    ($00,x)
+1DCE  28           plp
+1DCF  0B           phd
+1DD0  00           brk
+1DD1  00           brk
+1DD2  02 00        cop    $00
+1DD4  01 00        ora    ($00,x)
+1DD6  90 0E        bcc    $1DE6
+1DD8  00           brk
+1DD9  00           brk
+1DDA  01 00        ora    ($00,x)
+1DDC  89 0B        bit    #$0B
+1DDE  00           brk
+1DDF  00           brk
+1DE0  02 00        cop    $00
+1DE2  01 00        ora    ($00,x)
+1DE4  90 0E        bcc    $1DF4
+1DE6  00           brk
+1DE7  00           brk
+1DE8  01 00        ora    ($00,x)
+1DEA  AE 0B 00     ldx    $000B
+1DED  00           brk
+1DEE  02 00        cop    $00
+1DF0  01 00        ora    ($00,x)
+1DF2  90 0E        bcc    $1E02
+1DF4  00           brk
+1DF5  00           brk
+1DF6  01 00        ora    ($00,x)
+1DF8  23 0C        and    $0C,s
+1DFA  00           brk
+1DFB  00           brk
+1DFC  02 00        cop    $00
+1DFE  01 00        ora    ($00,x)
+1E00  D7 10        cmp    [$10],y
+1E02  00           brk
+1E03  00           brk
+1E04  01 00        ora    ($00,x)
+1E06  33 0C        and    ($0C,s),y
+1E08  00           brk
+1E09  00           brk
+1E0A  02 00        cop    $00
+1E0C  01 00        ora    ($00,x)
+1E0E  E3 01        sbc    $01,s
+1E10  00           brk
+1E11  00           brk
+1E12  01 00        ora    ($00,x)
+1E14  49 0C        eor    #$0C
+1E16  00           brk
+1E17  00           brk
+1E18  02 00        cop    $00
+1E1A  01 00        ora    ($00,x)
+1E1C  32 11        and    ($11)
+1E1E  00           brk
+1E1F  00           brk
+1E20  01 00        ora    ($00,x)
+1E22  53 0C        eor    ($0C,s),y
+1E24  00           brk
+1E25  00           brk
+1E26  02 00        cop    $00
+1E28  03 00        ora    $00,s
+1E2A  F5 01        sbc    $01,x
+1E2C  00           brk
+1E2D  00           brk
+1E2E  01 00        ora    ($00,x)
+1E30  5C 0C 00 00  jmp    $00000C
+1E34  02 00        cop    $00
+1E36  01 00        ora    ($00,x)
+1E38  C6 11        dec    $11
+1E3A  00           brk
+1E3B  00           brk
+1E3C  01 00        ora    ($00,x)
+1E3E  75 0C        adc    $0C,x
+1E40  00           brk
+1E41  00           brk
+1E42  02 00        cop    $00
+1E44  01 00        ora    ($00,x)
+1E46  E3 11        sbc    $11,s
+1E48  00           brk
+1E49  00           brk
+1E4A  01 00        ora    ($00,x)
+1E4C  8B           phb
+1E4D  0C 00 00     tsb    $0000
+1E50  02 00        cop    $00
+1E52  01 00        ora    ($00,x)
+1E54  E8           inx
+1E55  11 00        ora    ($00),y
+1E57  00           brk
+1E58  01 00        ora    ($00,x)
+1E5A  A9 0C        lda    #$0C
+1E5C  00           brk
+1E5D  00           brk
+1E5E  02 00        cop    $00
+1E60  01 00        ora    ($00,x)
+1E62  8F 02 00 00  sta    $000002
+1E66  01 00        ora    ($00,x)
+1E68  70 0D        bvs    $1E77
+1E6A  00           brk
+1E6B  00           brk
+1E6C  02 00        cop    $00
+1E6E  01 00        ora    ($00,x)
+1E70  53 01        eor    ($01,s),y
+1E72  00           brk
+1E73  00           brk
+1E74  01 00        ora    ($00,x)
+1E76  E6 0D        inc    $0D
+1E78  00           brk
+1E79  00           brk
+1E7A  02 00        cop    $00
+1E7C  01 00        ora    ($00,x)
+1E7E  1C 12 00     trb    $0012
+1E81  00           brk
+1E82  01 00        ora    ($00,x)
+1E84  F3 0D        sbc    ($0D,s),y
+1E86  00           brk
+1E87  00           brk
+1E88  02 00        cop    $00
+1E8A  03 00        ora    $00,s
+1E8C  BB           tyx
+1E8D  00           brk
+1E8E  00           brk
+1E8F  00           brk
+1E90  01 00        ora    ($00,x)
+1E92  09 0E        ora    #$0E
+1E94  00           brk
+1E95  00           brk
+1E96  02 00        cop    $00
+1E98  01 00        ora    ($00,x)
+1E9A  D7 10        cmp    [$10],y
+1E9C  00           brk
+1E9D  00           brk
+1E9E  01 00        ora    ($00,x)
+1EA0  14 0E        trb    $0E
+1EA2  00           brk
+1EA3  00           brk
+1EA4  02 00        cop    $00
+1EA6  03 00        ora    $00,s
+1EA8  D3 01        cmp    ($01,s),y
+1EAA  00           brk
+1EAB  00           brk
+1EAC  01 00        ora    ($00,x)
+1EAE  3D 0E 00     and    $000E,x
+1EB1  00           brk
+1EB2  02 00        cop    $00
+1EB4  01 00        ora    ($00,x)
+1EB6  5C 02 00 00  jmp    $000002
+1EBA  01 00        ora    ($00,x)
+1EBC  EF 0E 00 00  sbc    $00000E
+1EC0  02 00        cop    $00
+1EC2  01 00        ora    ($00,x)
+1EC4  1C 12 00     trb    $0012
+1EC7  00           brk
+1EC8  01 00        ora    ($00,x)
+1ECA  2D 0F 00     and    $000F
+1ECD  00           brk
+1ECE  02 00        cop    $00
+1ED0  01 00        ora    ($00,x)
+1ED2  F3 02        sbc    ($02,s),y
+1ED4  00           brk
+1ED5  00           brk
+1ED6  01 00        ora    ($00,x)
+1ED8  95 0F        sta    $0F,x
+1EDA  00           brk
+1EDB  00           brk
+1EDC  02 00        cop    $00
+1EDE  01 00        ora    ($00,x)
+1EE0  4D 04 00     eor    $0004
+1EE3  00           brk
+1EE4  01 00        ora    ($00,x)
+1EE6  98           tya
+1EE7  0F 00 00 02  ora    $020000
+1EEB  00           brk
+1EEC  04 00        tsb    $00
+1EEE  56 02        lsr    $02,x
+1EF0  00           brk
+1EF1  00           brk
+1EF2  01 00        ora    ($00,x)
+1EF4  E9 0F        sbc    #$0F
+1EF6  00           brk
+1EF7  00           brk
+1EF8  02 00        cop    $00
+1EFA  01 00        ora    ($00,x)
+1EFC  BF 02 00 00  lda    $000002,x
+1F00  01 00        ora    ($00,x)
+1F02  13 10        ora    ($10,s),y
+1F04  00           brk
+1F05  00           brk
+1F06  02 00        cop    $00
+1F08  01 00        ora    ($00,x)
+1F0A  4D 04 00     eor    $0004
+1F0D  00           brk
+1F0E  01 00        ora    ($00,x)
+1F10  16 10        asl    $10,x
+1F12  00           brk
+1F13  00           brk
+1F14  02 00        cop    $00
+1F16  04 00        tsb    $00
+1F18  56 02        lsr    $02,x
+1F1A  00           brk
+1F1B  00           brk
+1F1C  01 00        ora    ($00,x)
+1F1E  B4 10        ldy    $10,x
+1F20  00           brk
+1F21  00           brk
+1F22  02 00        cop    $00
+1F24  01 00        ora    ($00,x)
+1F26  9F 12 00 00  sta    $000012,x
+1F2A  01 00        ora    ($00,x)
+1F2C  C4 10        cpy    $10
+1F2E  00           brk
+1F2F  00           brk
+1F30  02 00        cop    $00
+1F32  01 00        ora    ($00,x)
+1F34  9F 12 00 00  sta    $000012,x
+1F38  01 00        ora    ($00,x)
+1F3A  E4 10        cpx    $10
+1F3C  00           brk
+1F3D  00           brk
+1F3E  02 00        cop    $00
+1F40  03 00        ora    $00,s
+1F42  BB           tyx
+1F43  00           brk
+1F44  00           brk
+1F45  00           brk
+1F46  01 00        ora    ($00,x)
+1F48  FC 10 00     jsr    ($0010,x)
+1F4B  00           brk
+1F4C  02 00        cop    $00
+1F4E  01 00        ora    ($00,x)
+1F50  90 0E        bcc    $1F60
+1F52  00           brk
+1F53  00           brk
+1F54  01 00        ora    ($00,x)
+1F56  1F 11 00 00  ora    $000011,x
+1F5A  02 00        cop    $00
+1F5C  03 00        ora    $00,s
+1F5E  D3 01        cmp    ($01,s),y
+1F60  00           brk
+1F61  00           brk
+1F62  01 00        ora    ($00,x)
+1F64  2E 11 00     rol    $0011
+1F67  00           brk
+1F68  02 00        cop    $00
+1F6A  01 00        ora    ($00,x)
+1F6C  90 0E        bcc    $1F7C
+1F6E  00           brk
+1F6F  00           brk
+1F70  01 00        ora    ($00,x)
+1F72  3B           tsc
+1F73  11 00        ora    ($00),y
+1F75  00           brk
+1F76  02 00        cop    $00
+1F78  04 00        tsb    $00
+1F7A  58           cli
+1F7B  02 00        cop    $00
+1F7D  00           brk
+1F7E  01 00        ora    ($00,x)
+1F80  43 11        eor    $11,s
+1F82  00           brk
+1F83  00           brk
+1F84  02 00        cop    $00
+1F86  01 00        ora    ($00,x)
+1F88  DF 12 00 00  cmp    $000012,x
+1F8C  01 00        ora    ($00,x)
+1F8E  46 11        lsr    $11
+1F90  00           brk
+1F91  00           brk
+1F92  02 00        cop    $00
+1F94  04 00        tsb    $00
+1F96  58           cli
+1F97  02 00        cop    $00
+1F99  00           brk
+1F9A  01 00        ora    ($00,x)
+1F9C  4C 11 00     jmp    $0011
+1F9F  00           brk
+1FA0  02 00        cop    $00
+1FA2  01 00        ora    ($00,x)
+1FA4  DF 12 00 00  cmp    $000012,x
+1FA8  01 00        ora    ($00,x)
+1FAA  53 11        eor    ($11,s),y
+1FAC  00           brk
+1FAD  00           brk
+1FAE  02 00        cop    $00
+1FB0  04 00        tsb    $00
+1FB2  58           cli
+1FB3  02 00        cop    $00
+1FB5  00           brk
+1FB6  01 00        ora    ($00,x)
+1FB8  E4 11        cpx    $11
+1FBA  00           brk
+1FBB  00           brk
+1FBC  02 00        cop    $00
+1FBE  01 00        ora    ($00,x)
+1FC0  E8           inx
+1FC1  11 00        ora    ($00),y
+1FC3  00           brk
+1FC4  01 00        ora    ($00,x)
+1FC6  33 12        and    ($12,s),y
+1FC8  00           brk
+1FC9  00           brk
+1FCA  02 00        cop    $00
+1FCC  01 00        ora    ($00,x)
+1FCE  13 02        ora    ($02,s),y
+1FD0  00           brk
+1FD1  00           brk
+1FD2  01 00        ora    ($00,x)
+1FD4  49 12        eor    #$12
+1FD6  00           brk
+1FD7  00           brk
+1FD8  02 00        cop    $00
+1FDA  01 00        ora    ($00,x)
+1FDC  0B           phd
+1FDD  13 00        ora    ($00,s),y
+1FDF  00           brk
+1FE0  01 00        ora    ($00,x)
+1FE2  58           cli
+1FE3  12 00        ora    ($00)
+1FE5  00           brk
+1FE6  02 00        cop    $00
+1FE8  03 00        ora    $00,s
+1FEA  D7 00        cmp    [$00],y
+1FEC  00           brk
+1FED  00           brk
+1FEE  01 00        ora    ($00,x)
+1FF0  B3 12        lda    ($12,s),y
+1FF2  00           brk
+1FF3  00           brk
+1FF4  02 00        cop    $00
+1FF6  01 00        ora    ($00,x)
+1FF8  E8           inx
+1FF9  11 00        ora    ($00),y
+1FFB  00           brk
+1FFC  01 00        ora    ($00,x)
+1FFE  E0 12 00     cpx    #$0012    ; Note: 16-bit instruction
+2001  00           brk
+2002  02 00        cop    $00
+2004  04 00        tsb    $00
+2006  5A           phy
+2007  02 00        cop    $00
+2009  00           brk
+200A  01 00        ora    ($00,x)
+200C  E5 12        sbc    $12
+200E  00           brk
+200F  00           brk
+2010  02 00        cop    $00
+2012  03 00        ora    $00,s
+2014  0B           phd
+2015  00           brk
+2016  00           brk
+2017  00           brk
+2018  01 00        ora    ($00,x)
+201A  E8           inx
+201B  12 00        ora    ($00)
+201D  00           brk
+201E  02 00        cop    $00
+2020  04 00        tsb    $00
+2022  5A           phy
+2023  02 00        cop    $00
+2025  00           brk
+2026  01 00        ora    ($00,x)
+2028  EC 12 00     cpx    $0012
+202B  00           brk
+202C  02 00        cop    $00
+202E  03 00        ora    $00,s
+2030  0D 00 00     ora    $0000
+2033  00           brk
+2034  01 00        ora    ($00,x)
+2036  EF 12 00 00  sbc    $000012
+203A  02 00        cop    $00
+203C  04 00        tsb    $00
+203E  5A           phy
+203F  02 00        cop    $00
+2041  00           brk
+2042  01 00        ora    ($00,x)
+2044  FB           xce
+2045  12 00        ora    ($00)
+2047  00           brk
+2048  02 00        cop    $00
+204A  04 00        tsb    $00
+204C  5A           phy
+204D  02 00        cop    $00
+204F  00           brk
+2050  01 00        ora    ($00,x)
+2052  02 13        cop    $13
+2054  00           brk
+2055  00           brk
+2056  02 00        cop    $00
+2058  04 00        tsb    $00
+205A  5A           phy
+205B  02 00        cop    $00
+205D  00           brk
+205E  01 00        ora    ($00,x)
+2060  14 13        trb    $13
+2062  00           brk
+2063  00           brk
+2064  02 00        cop    $00
+2066  04 00        tsb    $00
+2068  58           cli
+2069  02 00        cop    $00
+206B  00           brk
+206C  01 00        ora    ($00,x)
+206E  1C 13 00     trb    $0013
+2071  00           brk
+2072  02 00        cop    $00
+2074  01 00        ora    ($00,x)
+2076  DF 12 00 00  cmp    $000012,x
+207A  01 00        ora    ($00,x)
+207C  1F 13 00 00  ora    $000013,x
+2080  02 00        cop    $00
+2082  04 00        tsb    $00
+2084  58           cli
+2085  02 00        cop    $00
+2087  00           brk
+2088  01 00        ora    ($00,x)
+208A  25 13        and    $13
+208C  00           brk
+208D  00           brk
+208E  02 00        cop    $00
+2090  01 00        ora    ($00,x)
+2092  DF 12 00 00  cmp    $000012,x
+2096  01 00        ora    ($00,x)
+2098  4C 13 00     jmp    $0013
+209B  00           brk
+209C  02 00        cop    $00
+209E  04 00        tsb    $00
+20A0  58           cli
+20A1  02 00        cop    $00
+20A3  00           brk
+20A4  01 00        ora    ($00,x)
+20A6  A6 13        ldx    $13
+20A8  00           brk
+20A9  00           brk
+20AA  02 00        cop    $00
+20AC  01 00        ora    ($00,x)
+20AE  DF 12 00 00  cmp    $000012,x
+20B2            end

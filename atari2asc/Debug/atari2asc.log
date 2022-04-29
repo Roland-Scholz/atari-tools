@@ -1,0 +1,3 @@
+﻿  atari2asc.cpp
+c:\atarigit\tools\atari2asc\atari2asc.cpp(208): warning C4101: "fo": Unreferenzierte lokale Variable
+  atari2asc.vcxproj -> C:\atarigit\Tools\atari2asc\Debug\atari2asc.exe
